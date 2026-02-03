@@ -211,11 +211,10 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     const gameStats = { [keyA]: 0, [keyB]: 0 };
     const setStats = { [keyA]: 0, [keyB]: 0 };
 
-    sets.forEach(set => {
-  const isObj = typeof set === "object";
-  const score = isObj ? set.score : set;
-  const isTiebreak = isObj && set.tiebreak;
-
+    sets.forEach((set, index) => {
+  const isObject = typeof set === "object";
+  const isTiebreak = isObject && set.tiebreak;
+  const score = isObject ? set.score : set;
   const [a, b] = score.split("-").map(Number);
 
   if (!isTiebreak) {
@@ -226,8 +225,13 @@ function calcolaStatisticheGiocatori(stagioneKey) {
       if (a > b) setStats[keyA]++;
       else if (b > a) setStats[keyB]++;
     }
+  } else {
+    // Tie-break: conta il set vinto, ma non i game
+    if (a > b) setStats[keyA]++;
+    else if (b > a) setStats[keyB]++;
   }
 });
+
 
 
    // === Calcolo vincitore corretto ===
