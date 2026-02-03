@@ -61,6 +61,26 @@ const stagioni = {
         teamB: ["MaF", "LF"],
         sets: ["6-2", "6-7", {score: "10-8", tiebreak: true }]
       },
+      {
+        teamA: ["LB", "FP"],
+        teamB: ["BC", "AB"],
+        sets: ["6-2", "6-4", "0-2"]
+      },
+      {
+        teamA: ["BC", "MP"],
+        teamB: ["PiS", "LF"],
+        sets: ["3-6", "6-3", "7-5"]
+      },
+      {
+        teamA: ["MB", "AoB"],
+        teamB: ["LuF", "MiF"],
+        sets: ["5-7", "6-4"]
+      },
+      {
+        teamA: ["MM", "CM"],
+        teamB: ["LT", "ZG"],
+        sets: ["6-3", "4-6", "6-3"]
+      },
     ]
   }
 };
@@ -210,19 +230,18 @@ function calcolaStatisticheGiocatori(stagioneKey) {
 });
 
 
-    let winner = null;
-    const totalSets = sets.length;
-    const lastSetRaw = sets[totalSets - 1];
-const lastScore = typeof lastSetRaw === "object" ? lastSetRaw.score : lastSetRaw;
-const lastSet = lastScore?.split("-").map(Number);
+   // === Calcolo vincitore corretto ===
+let winner = null;
 
-    const thirdSetPlayed = totalSets === 3 && lastSet && (lastSet[0] !== lastSet[1]);
+if (setStats[keyA] === 2) {
+  winner = teamA;
+} else if (setStats[keyB] === 2) {
+  winner = teamB;
+} else if (sets.length === 3 && setStats[keyA] === 1 && setStats[keyB] === 1) {
+  const [a, b] = sets[2].split("-").map(Number);
+  if (a !== b) winner = a > b ? teamA : teamB;
+}
 
-    if (setStats[keyA] > setStats[keyB]) winner = teamA;
-    else if (setStats[keyB] > setStats[keyA]) winner = teamB;
-    else if (thirdSetPlayed) {
-      winner = lastSet[0] > lastSet[1] ? teamA : teamB;
-    }
 
     // assegna set e game
     teamA.forEach(p => {
