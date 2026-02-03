@@ -81,6 +81,17 @@ const stagioni = {
         teamB: ["LT", "ZG"],
         sets: ["6-3", "4-6", "6-3"]
       },
+      {
+        teamA: ["MM", "LT"],
+        teamB: ["FP", "CM"],
+        sets: ["3-6", "1-2"],
+        ritiro: "B"
+      },
+      {
+        teamA: ["ZG", "MB"],
+        teamB: ["ML", "PiS"],
+        sets: ["7-5", "6-2", "2-2"]
+      },
     ]
   }
 };
@@ -237,6 +248,14 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     const setsA = setStats[keyA];
     const setsB = setStats[keyB];
 
+    if (ritiro === "A") {
+  winner = teamB;
+} else if (ritiro === "B") {
+  winner = teamA;
+} else {
+  // Tutta la logica esistente per stabilire il vincitore
+}
+
     if (setsA > setsB) {
   winner = teamA;
 } else if (setsB > setsA) {
@@ -259,18 +278,20 @@ function calcolaStatisticheGiocatori(stagioneKey) {
 
 
     // ➕ Assegna set e game
-    teamA.forEach(p => {
-      stats[p].setVinti += setStats[keyA];
-      stats[p].setPersi += setStats[keyB];
-      stats[p].gameVinti += gameStats[keyA];
-      stats[p].gamePersi += gameStats[keyB];
-    });
-    teamB.forEach(p => {
-      stats[p].setVinti += setStats[keyB];
-      stats[p].setPersi += setStats[keyA];
-      stats[p].gameVinti += gameStats[keyB];
-      stats[p].gamePersi += gameStats[keyA];
-    });
+    teamA.filter(p => stats[p]).forEach(p => {
+  stats[p].setVinti += setStats[keyA];
+  stats[p].setPersi += setStats[keyB];
+  stats[p].gameVinti += gameStats[keyA];
+  stats[p].gamePersi += gameStats[keyB];
+});
+
+teamB.filter(p => stats[p]).forEach(p => {
+  stats[p].setVinti += setStats[keyB];
+  stats[p].setPersi += setStats[keyA];
+  stats[p].gameVinti += gameStats[keyB];
+  stats[p].gamePersi += gameStats[keyA];
+});
+
 
     // ➕ Assegna match vinti/persi/pari
     if (winner) {
