@@ -258,7 +258,7 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     torneiGiocati[p] = new Set([stagioneKey]);
   });
 
- stagione.match.forEach(({ teamA, teamB, sets, ritiro }) => {
+  stagione.match.forEach(({ teamA, teamB, sets, ritiro }) => {
     const keyA = teamA.join("|");
     const keyB = teamB.join("|");
     const gameStats = { [keyA]: 0, [keyB]: 0 };
@@ -266,9 +266,8 @@ function calcolaStatisticheGiocatori(stagioneKey) {
 
     sets.forEach(set => {
       const isObj = typeof set === "object";
-      const score = isObj ? set.score : set;
       const isTiebreak = isObj && set.tiebreak;
-
+      const score = isObj ? set.score : set;
       const [a, b] = score.split("-").map(Number);
 
       if (!isTiebreak) {
@@ -280,76 +279,71 @@ function calcolaStatisticheGiocatori(stagioneKey) {
           else if (b > a) setStats[keyB]++;
         }
       } else {
-        // Tie-break: conta solo il set vinto
+        // Conteggia solo il set vinto, ignora i game
         if (a > b) setStats[keyA]++;
         else if (b > a) setStats[keyB]++;
       }
     });
 
-    // === Calcolo vincitore secondo le regole aggiornate ===
+    // === Determina esito del match ===
     let winner = null;
     let isDraw = false;
 
-    const setsA = setStats[keyA];
-    const setsB = setStats[keyB];
+    if (ritiro === "A") {
+      winner = teamB;
+    } else if (ritiro === "B") {
+      winner = teamA;
+    } else {
+      const setsA = setStats[keyA];
+      const setsB = setStats[keyB];
 
-   if (ritiro === "A") {
-  winner = teamB;
-} else if (ritiro === "B") {
-  winner = teamA;
-} else if (setsA > setsB) {
-  winner = teamA;
-} else if (setsB > setsA) {
-  winner = teamB;
-} else {
-  // Set pari
-  if (sets.length < 3) {
-    isDraw = true;
-  } else {
-    const last = sets[2];
-    const score = typeof last === "object" ? last.score : last;
-    const [a, b] = score.split("-").map(Number);
+      if (setsA > setsB) {
+        winner = teamA;
+      } else if (setsB > setsA) {
+        winner = teamB;
+      } else {
+        if (sets.length < 3) {
+          isDraw = true;
+        } else {
+          const lastSet = sets[2];
+          const score = typeof lastSet === "object" ? lastSet.score : lastSet;
+          const [a, b] = score.split("-").map(Number);
 
-    if (a > b) winner = teamA;
-    else if (b > a) winner = teamB;
-    else isDraw = true;
-  }
-}
+          if (a > b) winner = teamA;
+          else if (b > a) winner = teamB;
+          else isDraw = true;
+        }
+      }
+    }
 
-
-
-    // ➕ Assegna set e game
+    // === Assegna Set e Game
     teamA.filter(p => stats[p]).forEach(p => {
-  stats[p].setVinti += setStats[keyA];
-  stats[p].setPersi += setStats[keyB];
-  stats[p].gameVinti += gameStats[keyA];
-  stats[p].gamePersi += gameStats[keyB];
-});
+      stats[p].setVinti += setStats[keyA];
+      stats[p].setPersi += setStats[keyB];
+      stats[p].gameVinti += gameStats[keyA];
+      stats[p].gamePersi += gameStats[keyB];
+    });
 
-teamB.filter(p => stats[p]).forEach(p => {
-  stats[p].setVinti += setStats[keyB];
-  stats[p].setPersi += setStats[keyA];
-  stats[p].gameVinti += gameStats[keyB];
-  stats[p].gamePersi += gameStats[keyA];
-});
+    teamB.filter(p => stats[p]).forEach(p => {
+      stats[p].setVinti += setStats[keyB];
+      stats[p].setPersi += setStats[keyA];
+      stats[p].gameVinti += gameStats[keyB];
+      stats[p].gamePersi += gameStats[keyA];
+    });
 
-
-    // ➕ Assegna match vinti/persi/pari
+    // === Assegna Vittoria / Pareggio / Sconfitta
     if (winner) {
       winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
-
       (winner === teamA ? teamB : teamA)
-  .filter(p => stats[p])
-  .forEach(p => stats[p].matchPersi++);
-
-    } 
-    else if (isDraw) {
-      teamA.forEach(p => stats[p].matchPari++);
-      teamB.forEach(p => stats[p].matchPari++);
+        .filter(p => stats[p])
+        .forEach(p => stats[p].matchPersi++);
+    } else if (isDraw) {
+      teamA.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
+      teamB.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
     }
   });
 
-  // ➕ Match totali e punti
+  // === Calcolo Match Totali + Punti
   stagione.giornate.forEach(giornata => {
     Object.entries(giornata).forEach(([p, punti]) => {
       if (punti != null && stats[p]) {
@@ -359,7 +353,7 @@ teamB.filter(p => stats[p]).forEach(p => {
     });
   });
 
-  // ➕ Tornei giocati
+  // === Tornei giocati
   Object.keys(stats).forEach(p => {
     stats[p].torneiGiocati = torneiGiocati[p]?.size || 0;
   });
