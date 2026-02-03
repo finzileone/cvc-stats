@@ -92,6 +92,51 @@ const stagioni = {
         teamB: ["ML", "PiS"],
         sets: ["7-5", "6-2", "2-2"]
       },
+      {
+        teamA: ["LuF", "LF"],
+        teamB: ["LT", "AoB"],
+        sets: ["6-3", "7-5"]
+      },
+      {
+        teamA: ["BC", "MiF"],
+        teamB: ["CM", "ZG"],
+        sets: ["6-3", "6-4", "4-1"]
+      },
+      {
+        teamA: ["LB", "MaF"],
+        teamB: ["AB", "LeF"],
+        sets: ["3-6", "6-0", "6-2"]
+      },
+      {
+        teamA: ["LuF", "AB"],
+        teamB: ["LB", "MB"],
+        sets: ["2-6", "6-0", "4-4"]
+      },
+      {
+        teamA: ["BC", "LF"],
+        teamB: ["MM", "MiF"],
+        sets: ["6-4", "1-4"]
+      },
+      {
+        teamA: ["AoB", "MP"],
+        teamB: ["MaF", "LeF"],
+        sets: ["6-0", "3-6", "6-2"]
+      },
+      {
+        teamA: ["AoB", "LeF"],
+        teamB: ["LT", "CM"],
+        sets: ["6-2", "6-2", "6-2"]
+      },
+      {
+        teamA: ["MiF", "PS"],
+        teamB: ["LF", "ZG"],
+        sets: ["6-2", "3-6", "2-1"]
+      },
+      {
+        teamA: ["LuF", "PiS"],
+        teamB: ["MM", "MP"],
+        sets: ["4-6", "6-4", {score: "7-4", tiebreak: true }]
+      },
     ]
   }
 };
