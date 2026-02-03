@@ -248,22 +248,17 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     const setsA = setStats[keyA];
     const setsB = setStats[keyB];
 
-    if (ritiro === "A") {
+   if (ritiro === "A") {
   winner = teamB;
 } else if (ritiro === "B") {
   winner = teamA;
-} else {
-  // Tutta la logica esistente per stabilire il vincitore
-}
-
-    if (setsA > setsB) {
+} else if (setsA > setsB) {
   winner = teamA;
 } else if (setsB > setsA) {
   winner = teamB;
 } else {
   // Set pari
   if (sets.length < 3) {
-    // Solo 2 set giocati, entrambi completi → pareggio
     isDraw = true;
   } else {
     const last = sets[2];
@@ -275,6 +270,7 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     else isDraw = true;
   }
 }
+
 
 
     // ➕ Assegna set e game
@@ -297,8 +293,12 @@ teamB.filter(p => stats[p]).forEach(p => {
     if (winner) {
       winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
 
-      (winner === teamA ? teamB : teamA).forEach(p => stats[p].matchPersi++);
-    } else if (isDraw) {
+      (winner === teamA ? teamB : teamA)
+  .filter(p => stats[p])
+  .forEach(p => stats[p].matchPersi++);
+
+    } 
+    else if (isDraw) {
       teamA.forEach(p => stats[p].matchPari++);
       teamB.forEach(p => stats[p].matchPari++);
     }
