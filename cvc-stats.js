@@ -107,6 +107,33 @@ function avviaAnimazioneClassifica(stagioneKey) {
     });
   });
 }
+const datiGiocatori = {
+  "MiF": { tennista: "Michele Fornari", trofei: 2, oro: 0, argento: 0, bronzo: 2 },
+  "LT": { tennista: "Luca Travaglio", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "FP": { tennista: "Filippo Pedroli", trofei: 23, oro: 8, argento: 9, bronzo: 6 },
+  "LF": { tennista: "Luca Finzi", trofei: 21, oro: 7, argento: 7, bronzo: 7 },
+  "MaF": { tennista: "Mario Fornari", trofei: 8, oro: 0, argento: 3, bronzo: 5 },
+  "LB": { tennista: "Luca Belitrandi", trofei: 14, oro: 9, argento: 2, bronzo: 3 },
+  "ML": { tennista: "Marco Levi", trofei: 14, oro: 7, argento: 6, bronzo: 1 },
+  "PS": { tennista: "Paolo Semenza", trofei: 8, oro: 0, argento: 1, bronzo: 7 },
+  "BC": { tennista: "Beppe Colli", trofei: 4, oro: 0, argento: 1, bronzo: 3 },
+  "LuF": { tennista: "Luca Fornari", trofei: 6, oro: 3, argento: 3, bronzo: 0 },
+  "MP": { tennista: "Martino Prati", trofei: 1, oro: 0, argento: 1, bronzo: 0 },
+  "ZG": { tennista: "Zeno Gorini", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "PiS": { tennista: "Pietro Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MM": { tennista: "Mario Marangione", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "CM": { tennista: "Carlo Momigliano", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MeF": { tennista: "Matteo Fornari", trofei: 1, oro: 1, argento: 0, bronzo: 0 },
+  "MB": { tennista: "Massimo Bergia", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MS": { tennista: "Mattia Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "GF": { tennista: "Giovanni Fornari", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "AR": { tennista: "Agustin Rojas", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "SS": { tennista: "Stefano Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "AB": { tennista: "Alessandro Belitrandi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "LeF": { tennista: "Leone Finzi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "AoB": { tennista: "Antonio Bergamasco", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  // Aggiungi tutti gli altri...
+};
 
 // === CALCOLO STATS ===
 function calcolaStatisticheGiocatori(stagioneKey) {
@@ -247,7 +274,12 @@ table.className = "stats-table";
 table.innerHTML = `
   <thead>
     <tr>
-      <th>Giocatore</th>
+      <th>Sigla</th>
+      <th>Tennista</th>
+      <th>Trofei</th>
+      <th>Oro</th>
+      <th>Argento</th>
+      <th>Bronzo</th>
       <th>Tornei</th>
       <th>Match</th>
       <th>Vinte</th>
@@ -264,14 +296,16 @@ table.innerHTML = `
   </thead>
   <tbody></tbody>
 `;
+
 scrollWrapper.appendChild(table);
 
 
   const body = table.querySelector("tbody");
 
  Object.entries(stats)
-  .sort(([, a], [, b]) => b.puntiTotali - a.puntiTotali) // 👈 Ordina per punti decrescenti
+  .sort(([, a], [, b]) => b.puntiTotali - a.puntiTotali)
   .forEach(([giocatore, s]) => {
+    const info = datiGiocatori[giocatore] || {};
     const percentualeVittorie = s.matchTotali > 0
       ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
       : "-";
@@ -280,6 +314,11 @@ scrollWrapper.appendChild(table);
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${giocatore}</td>
+      <td>${info.tennista || "-"}</td>
+      <td>${info.trofei ?? "-"}</td>
+      <td>${info.oro ?? "-"}</td>
+      <td>${info.argento ?? "-"}</td>
+      <td>${info.bronzo ?? "-"}</td>
       <td>${s.torneiGiocati}</td>
       <td>${s.matchTotali}</td>
       <td>${s.matchVinti}</td>
@@ -295,6 +334,7 @@ scrollWrapper.appendChild(table);
     `;
     body.appendChild(row);
   });
+
 
 
   container.appendChild(table);
