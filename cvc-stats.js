@@ -35,7 +35,32 @@ const stagioni = {
         teamA: ["MB", "MP"],
         teamB: ["LuF", "LeF"],
         sets: ["6-3", "5-6"]
-      }
+      },
+      {
+        teamA: ["AB", "BC"],
+        teamB: ["LT", "LF"],
+        sets: ["6-3", "6-2"]
+      },
+      {
+        teamA: ["LB", "PiS"],
+        teamB: ["CM", "ZG"],
+        sets: ["6-2", "6-0", "6-4"]
+      },
+      {
+        teamA: ["MB", "FP"],
+        teamB: ["MaF", "LeF"],
+        sets: ["6-3", "6-3", "6-2"]
+      },
+      {
+        teamA: ["PS", "LuF"],
+        teamB: ["MiF", "LeF"],
+        sets: ["6-1", "6-2", "5-3"]
+      },
+      {
+        teamA: ["MM", "AoB"],
+        teamB: ["MaF", "LF"],
+        sets: ["6-2", "6-7", {score: "10-8", tiebreak: true }]
+      },
     ]
   }
 };
@@ -166,20 +191,31 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     const gameStats = { [keyA]: 0, [keyB]: 0 };
     const setStats = { [keyA]: 0, [keyB]: 0 };
 
-    sets.forEach((score) => {
-      const [a, b] = score.split("-").map(Number);
-      gameStats[keyA] += a;
-      gameStats[keyB] += b;
+    sets.forEach(set => {
+  const isObj = typeof set === "object";
+  const score = isObj ? set.score : set;
+  const isTiebreak = isObj && set.tiebreak;
 
-      if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
-        if (a > b) setStats[keyA]++;
-        else if (b > a) setStats[keyB]++;
-      }
-    });
+  const [a, b] = score.split("-").map(Number);
+
+  if (!isTiebreak) {
+    gameStats[keyA] += a;
+    gameStats[keyB] += b;
+
+    if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
+      if (a > b) setStats[keyA]++;
+      else if (b > a) setStats[keyB]++;
+    }
+  }
+});
+
 
     let winner = null;
     const totalSets = sets.length;
-    const lastSet = sets[totalSets - 1]?.split("-").map(Number);
+    const lastSetRaw = sets[totalSets - 1];
+const lastScore = typeof lastSetRaw === "object" ? lastSetRaw.score : lastSetRaw;
+const lastSet = lastScore?.split("-").map(Number);
+
     const thirdSetPlayed = totalSets === 3 && lastSet && (lastSet[0] !== lastSet[1]);
 
     if (setStats[keyA] > setStats[keyB]) winner = teamA;
