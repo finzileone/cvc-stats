@@ -137,6 +137,124 @@ const stagioni = {
         teamB: ["MM", "MP"],
         sets: ["4-6", "6-4", {score: "7-4", tiebreak: true }]
       },
+      {
+        teamA: ["MM", "PiS"],
+        teamB: ["LuF", "MaF"],
+        sets: ["7-6", "6-6"]
+      },
+      {
+        teamA: ["BC", "MP"],
+        teamB: ["AB", "ZG"],
+        sets: ["7-5", "6-2"]
+      },
+      {
+        teamA: ["LB", "LT"],
+        teamB: ["MB", "LeF"],
+        sets: ["3-2"],
+        ritiro: "A"
+      },
+      {
+        teamA: ["MP", "PiS"],
+        teamB: ["LeF", "MiF"],
+        sets: ["7-6", "6-4"]
+      },
+      {
+        teamA: ["LuF", "CM"],
+        teamB: ["MM", "PS"],
+        sets: ["6-2", "7-6", "5-1"]
+      },
+      {
+        teamA: ["LB", "AoB"],
+        teamB: ["LF", "AB"],
+        sets: ["6-3", "6-3", "3-1"]
+      },
+      {
+        teamA: ["AoB", "LeF"],
+        teamB: ["AB", "MiF"],
+        sets: ["6-3", "6-4"]
+      },
+      {
+        teamA: ["LF", "MaF"],
+        teamB: ["CM", "ZG"],
+        sets: ["6-2", "7-6"]
+      },
+      {
+        teamA: ["LB", "MP"],
+        teamB: ["BC", "PiS"],
+        sets: ["6-1", "7-5", "2-2"]
+      },
+      {
+        teamA: ["AoB", "CM"],
+        teamB: ["MaF", "MM"],
+        sets: ["6-3", "6-2", "1-4"]
+      },
+      {
+        teamA: ["AB", "ZG"],
+        teamB: ["PS", "MiF"],
+        sets: ["6-0", "6-2", "6-2"]
+      },
+      {
+        teamA: ["LuF", "FP"],
+        teamB: ["LeF", "PiS"],
+        sets: ["6-1", "6-4", "6-2"]
+      },
+      {
+        teamA: ["BC", "CM"],
+        teamB: ["AoB", "PS"],
+        sets: ["6-4", "2-6", "1-1"]
+      },
+     {
+        teamA: ["LB", "MaF"],
+        teamB: ["MP", "ZG"],
+        sets: ["6-4", "6-1"]
+      },
+      {
+        teamA: ["LF", "LeF"],
+        teamB: ["MM", "MaF"],
+        sets: ["6-3", "6-6"]
+      },
+      {
+        teamA: ["ZG", "AB"],
+        teamB: ["BC", "CM"],
+        sets: ["6-4", "6-0", "4-2"]
+      },
+      {
+        teamA: ["LuF", "PS"],
+        teamB: ["LB", "MiF"],
+        sets: ["6-1", "6-4", "1-5"]
+      },
+      {
+        teamA: ["MB", "AB"],
+        teamB: ["AoB", "MiF"],
+        sets: ["6-0", "6-1", "1-6"]
+      },
+      	{
+        teamA: ["LuF", "FP"],
+        teamB: ["LB", "PS"],
+        sets: ["6-7", "6-1", {score: "12-10", tiebreak: true }]
+      },
+      {
+        teamA: ["LF", "PiS"],
+        teamB: ["MM", "LeF"],
+        sets: ["2-6", "6-4", {score: "7-5", tiebreak: true }]
+      },
+      {
+        teamA: ["MP", "PiS"],
+        teamB: ["MB", "MM"],
+        sets: ["1-6", "6-3"],
+        ritiro: "B"
+      },
+      {
+        teamA: ["ZG", "FP"],
+        teamB: ["MiF", "CM"],
+        sets: ["6-3", "7-5"]
+      },
+      {
+        teamA: ["AB", "BC"],
+        teamB: ["AoB", "LF"],
+        sets: ["2-6", "6-2"],
+        ritiro: "B"
+      },
     ]
   }
 };
