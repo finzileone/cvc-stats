@@ -238,22 +238,25 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     const setsB = setStats[keyB];
 
     if (setsA > setsB) {
-      winner = teamA;
-    } else if (setsB > setsA) {
-      winner = teamB;
-    } else if (setsA === setsB) {
-      const last = sets[sets.length - 1];
-      if (last) {
-        const score = typeof last === "object" ? last.score : last;
-        const [a, b] = score.split("-").map(Number);
+  winner = teamA;
+} else if (setsB > setsA) {
+  winner = teamB;
+} else {
+  // Set pari
+  if (sets.length < 3) {
+    // Solo 2 set giocati, entrambi completi → pareggio
+    isDraw = true;
+  } else {
+    const last = sets[2];
+    const score = typeof last === "object" ? last.score : last;
+    const [a, b] = score.split("-").map(Number);
 
-        if (a > b) winner = teamA;
-        else if (b > a) winner = teamB;
-        else isDraw = true;
-      } else {
-        isDraw = true;
-      }
-    }
+    if (a > b) winner = teamA;
+    else if (b > a) winner = teamB;
+    else isDraw = true;
+  }
+}
+
 
     // ➕ Assegna set e game
     teamA.forEach(p => {
