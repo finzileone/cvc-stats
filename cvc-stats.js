@@ -213,7 +213,7 @@ function calcolaStatisticheGiocatori(stagioneKey) {
     torneiGiocati[p] = new Set([stagioneKey]);
   });
 
-  stagione.match.forEach(({ teamA, teamB, sets }) => {
+ stagione.match.forEach(({ teamA, teamB, sets, ritiro }) => {
     const keyA = teamA.join("|");
     const keyB = teamB.join("|");
     const gameStats = { [keyA]: 0, [keyB]: 0 };
@@ -295,7 +295,8 @@ teamB.filter(p => stats[p]).forEach(p => {
 
     // ➕ Assegna match vinti/persi/pari
     if (winner) {
-      winner.forEach(p => stats[p].matchVinti++);
+      winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
+
       (winner === teamA ? teamB : teamA).forEach(p => stats[p].matchPersi++);
     } else if (isDraw) {
       teamA.forEach(p => stats[p].matchPari++);
