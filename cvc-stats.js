@@ -363,124 +363,120 @@ const datiGiocatori = {
   // Aggiungi tutti gli altri...
 };
 
-// === CALCOLO STATS ===
-function calcolaStatisticheGiocatori(stagioneKey) {
-  const stagione = stagioni[stagioneKey];
+// === CALCOLO STATS GLOBALI ===
+function calcolaStatisticheGlobali() {
   const stats = {};
   const torneiGiocati = {};
 
-  stagione.teams.forEach(p => {
-    stats[p] = {
-      matchVinti: 0,
-      matchPersi: 0,
-      matchPari: 0,
-      setVinti: 0,
-      setPersi: 0,
-      gameVinti: 0,
-      gamePersi: 0,
-      matchTotali: 0,
-      puntiTotali: 0,
-      torneiGiocati: 0
-    };
-    torneiGiocati[p] = new Set([stagioneKey]);
-  });
+  Object.entries(stagioni).forEach(([stagioneKey, stagione]) => {
+    const { teams, match, giornate } = stagione;
 
-  stagione.match.forEach(({ teamA, teamB, sets, ritiro }) => {
-    const keyA = teamA.join("|");
-    const keyB = teamB.join("|");
-    const gameStats = { [keyA]: 0, [keyB]: 0 };
-    const setStats = { [keyA]: 0, [keyB]: 0 };
+    teams.forEach(p => {
+      if (!stats[p]) {
+        stats[p] = {
+          matchVinti: 0,
+          matchPersi: 0,
+          matchPari: 0,
+          setVinti: 0,
+          setPersi: 0,
+          gameVinti: 0,
+          gamePersi: 0,
+          matchTotali: 0,
+          puntiTotali: 0,
+          torneiGiocati: 0
+        };
+        torneiGiocati[p] = new Set();
+      }
+      torneiGiocati[p].add(stagioneKey);
+    });
 
-    sets.forEach(set => {
-      const isObj = typeof set === "object";
-      const isTiebreak = isObj && set.tiebreak;
-      const score = isObj ? set.score : set;
-      const [a, b] = score.split("-").map(Number);
+    match.forEach(({ teamA, teamB, sets, ritiro }) => {
+      const keyA = teamA.join("|");
+      const keyB = teamB.join("|");
+      const gameStats = { [keyA]: 0, [keyB]: 0 };
+      const setStats = { [keyA]: 0, [keyB]: 0 };
 
-      if (!isTiebreak) {
-        gameStats[keyA] += a;
-        gameStats[keyB] += b;
+      sets.forEach(set => {
+        const isObj = typeof set === "object";
+        const isTiebreak = isObj && set.tiebreak;
+        const score = isObj ? set.score : set;
+        const [a, b] = score.split("-").map(Number);
 
-        if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
+        if (!isTiebreak) {
+          gameStats[keyA] += a;
+          gameStats[keyB] += b;
+
+          if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
+            if (a > b) setStats[keyA]++;
+            else if (b > a) setStats[keyB]++;
+          }
+        } else {
           if (a > b) setStats[keyA]++;
           else if (b > a) setStats[keyB]++;
         }
-      } else {
-        // Conteggia solo il set vinto, ignora i game
-        if (a > b) setStats[keyA]++;
-        else if (b > a) setStats[keyB]++;
-      }
-    });
+      });
 
-    // === Determina esito del match ===
-    let winner = null;
-    let isDraw = false;
+      let winner = null;
+      let isDraw = false;
 
-    if (ritiro === "A") {
-      winner = teamB;
-    } else if (ritiro === "B") {
-      winner = teamA;
-    } else {
-      const setsA = setStats[keyA];
-      const setsB = setStats[keyB];
-
-      if (setsA > setsB) {
-        winner = teamA;
-      } else if (setsB > setsA) {
+      if (ritiro === "A") {
         winner = teamB;
+      } else if (ritiro === "B") {
+        winner = teamA;
       } else {
-        if (sets.length < 3) {
-          isDraw = true;
-        } else {
-          const lastSet = sets[2];
-          const score = typeof lastSet === "object" ? lastSet.score : lastSet;
-          const [a, b] = score.split("-").map(Number);
+        const setsA = setStats[keyA];
+        const setsB = setStats[keyB];
 
-          if (a > b) winner = teamA;
-          else if (b > a) winner = teamB;
-          else isDraw = true;
+        if (setsA > setsB) winner = teamA;
+        else if (setsB > setsA) winner = teamB;
+        else {
+          if (sets.length < 3) {
+            isDraw = true;
+          } else {
+            const lastSet = sets[2];
+            const score = typeof lastSet === "object" ? lastSet.score : lastSet;
+            const [a, b] = score.split("-").map(Number);
+
+            if (a > b) winner = teamA;
+            else if (b > a) winner = teamB;
+            else isDraw = true;
+          }
         }
       }
-    }
 
-    // === Assegna Set e Game
-    teamA.filter(p => stats[p]).forEach(p => {
-      stats[p].setVinti += setStats[keyA];
-      stats[p].setPersi += setStats[keyB];
-      stats[p].gameVinti += gameStats[keyA];
-      stats[p].gamePersi += gameStats[keyB];
-    });
+      teamA.filter(p => stats[p]).forEach(p => {
+        stats[p].setVinti += setStats[keyA];
+        stats[p].setPersi += setStats[keyB];
+        stats[p].gameVinti += gameStats[keyA];
+        stats[p].gamePersi += gameStats[keyB];
+      });
 
-    teamB.filter(p => stats[p]).forEach(p => {
-      stats[p].setVinti += setStats[keyB];
-      stats[p].setPersi += setStats[keyA];
-      stats[p].gameVinti += gameStats[keyB];
-      stats[p].gamePersi += gameStats[keyA];
-    });
+      teamB.filter(p => stats[p]).forEach(p => {
+        stats[p].setVinti += setStats[keyB];
+        stats[p].setPersi += setStats[keyA];
+        stats[p].gameVinti += gameStats[keyB];
+        stats[p].gamePersi += gameStats[keyA];
+      });
 
-    // === Assegna Vittoria / Pareggio / Sconfitta
-    if (winner) {
-      winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
-      (winner === teamA ? teamB : teamA)
-        .filter(p => stats[p])
-        .forEach(p => stats[p].matchPersi++);
-    } else if (isDraw) {
-      teamA.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
-      teamB.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
-    }
-  });
-
-  // === Calcolo Match Totali + Punti
-  stagione.giornate.forEach(giornata => {
-    Object.entries(giornata).forEach(([p, punti]) => {
-      if (punti != null && stats[p]) {
-        stats[p].matchTotali++;
-        stats[p].puntiTotali += punti;
+      if (winner) {
+        winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
+        (winner === teamA ? teamB : teamA).filter(p => stats[p]).forEach(p => stats[p].matchPersi++);
+      } else if (isDraw) {
+        teamA.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
+        teamB.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
       }
     });
+
+    giornate.forEach(giornata => {
+      Object.entries(giornata).forEach(([p, punti]) => {
+        if (punti != null && stats[p]) {
+          stats[p].matchTotali++;
+          stats[p].puntiTotali += punti;
+        }
+      });
+    });
   });
 
-  // === Tornei giocati
   Object.keys(stats).forEach(p => {
     stats[p].torneiGiocati = torneiGiocati[p]?.size || 0;
   });
@@ -488,121 +484,90 @@ function calcolaStatisticheGiocatori(stagioneKey) {
   return stats;
 }
 
-
-
-
-
-
-// === MEDIA PUNTI SU TUTTE LE STAGIONI ===
-function calcolaMediaPuntiTotale(giocatore) {
-  let totalePunti = 0;
-  let totaleGiornate = 0;
-
-  Object.values(stagioni).forEach(stagione => {
-    if (!stagione.giornate) return;
-    stagione.giornate.forEach(giornata => {
-      if (giornata[giocatore] != null) {
-        totalePunti += giornata[giocatore];
-        totaleGiornate++;
-      }
-    });
-  });
-
-  return totaleGiornate > 0 ? totalePunti / totaleGiornate : 0;
-}
-
-// === MOSTRA STATS ===
-function mostraStatisticheGiocatori(stagioneKey) {
-  const stats = calcolaStatisticheGiocatori(stagioneKey);
-  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="${stagioneKey}"]`);
+function mostraStatisticheAllTime() {
+  const stats = calcolaStatisticheGlobali();
+  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="2025-invernale"]`);
   if (!wrapper) return;
 
-  // Crea contenitore principale
-const container = document.createElement("div");
-wrapper.appendChild(container);
+  const container = document.createElement("div");
+  wrapper.appendChild(container);
 
-// Crea un wrapper scrollabile per la tabella
-const scrollWrapper = document.createElement("div");
-scrollWrapper.className = "stats-table-wrapper";
-container.appendChild(scrollWrapper);
+  const scrollWrapper = document.createElement("div");
+  scrollWrapper.className = "stats-table-wrapper";
+  container.appendChild(scrollWrapper);
 
-// Crea la tabella vera e propria
-const table = document.createElement("table");
-table.className = "stats-table";
-table.innerHTML = `
-  <thead>
-    <tr>
-      <th>Sigla</th>
-      <th>Tennista</th>
-      <th>Trofei</th>
-      <th>Oro</th>
-      <th>Argento</th>
-      <th>Bronzo</th>
-      <th>Tornei</th>
-      <th>Match</th>
-      <th>Vinte</th>
-      <th>Perse</th>
-      <th>Pari</th>
-      <th>% Vittorie</th>
-      <th>Set Vinti</th>
-      <th>Set Persi</th>
-      <th>Game Vinti</th>
-      <th>Game Persi</th>
-      <th>Punti Totali</th>
-      <th>Media Punti</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-`;
-
-scrollWrapper.appendChild(table);
-
+  const table = document.createElement("table");
+  table.className = "stats-table";
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Sigla</th>
+        <th>Tennista</th>
+        <th>Trofei</th>
+        <th>Oro</th>
+        <th>Argento</th>
+        <th>Bronzo</th>
+        <th>Tornei</th>
+        <th>Match</th>
+        <th>Vinte</th>
+        <th>Perse</th>
+        <th>Pari</th>
+        <th>% Vittorie</th>
+        <th>Set Vinti</th>
+        <th>Set Persi</th>
+        <th>Game Vinti</th>
+        <th>Game Persi</th>
+        <th>Punti Totali</th>
+        <th>Media Punti</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+  scrollWrapper.appendChild(table);
 
   const body = table.querySelector("tbody");
+  Object.entries(stats)
+    .sort(([, a], [, b]) => b.puntiTotali - a.puntiTotali)
+    .forEach(([giocatore, s]) => {
+      const info = datiGiocatori[giocatore] || {};
+      const percentualeVittorie = s.matchTotali > 0
+        ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
+        : "-";
 
- Object.entries(stats)
-  .sort(([, a], [, b]) => b.puntiTotali - a.puntiTotali)
-  .forEach(([giocatore, s]) => {
-    const info = datiGiocatori[giocatore] || {};
-    const percentualeVittorie = s.matchTotali > 0
-      ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
-      : "-";
-    const mediaPunti = calcolaMediaPuntiTotale(giocatore).toFixed(2);
+      const mediaPunti = s.matchTotali > 0
+        ? (s.puntiTotali / s.matchTotali).toFixed(2)
+        : "0.00";
 
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${giocatore}</td>
-      <td>${info.tennista || "-"}</td>
-      <td>${info.trofei ?? "-"}</td>
-      <td>${info.oro ?? "-"}</td>
-      <td>${info.argento ?? "-"}</td>
-      <td>${info.bronzo ?? "-"}</td>
-      <td>${s.torneiGiocati}</td>
-      <td>${s.matchTotali}</td>
-      <td>${s.matchVinti}</td>
-      <td>${s.matchPersi}</td>
-      <td>${s.matchPari}</td>
-      <td>${percentualeVittorie}</td>
-      <td>${s.setVinti}</td>
-      <td>${s.setPersi}</td>
-      <td>${s.gameVinti}</td>
-      <td>${s.gamePersi}</td>
-      <td>${s.puntiTotali.toFixed(2)}</td>
-      <td>${mediaPunti}</td>
-    `;
-    body.appendChild(row);
-  });
-
-
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${giocatore}</td>
+        <td>${info.tennista || "-"}</td>
+        <td>${info.trofei ?? "-"}</td>
+        <td>${info.oro ?? "-"}</td>
+        <td>${info.argento ?? "-"}</td>
+        <td>${info.bronzo ?? "-"}</td>
+        <td>${s.torneiGiocati}</td>
+        <td>${s.matchTotali}</td>
+        <td>${s.matchVinti}</td>
+        <td>${s.matchPersi}</td>
+        <td>${s.matchPari}</td>
+        <td>${percentualeVittorie}</td>
+        <td>${s.setVinti}</td>
+        <td>${s.setPersi}</td>
+        <td>${s.gameVinti}</td>
+        <td>${s.gamePersi}</td>
+        <td>${s.puntiTotali.toFixed(2)}</td>
+        <td>${mediaPunti}</td>
+      `;
+      body.appendChild(row);
+    });
 
   container.appendChild(table);
 }
 
-
-// === AVVIO AUTOMATICO E CLICK ===
+// === AVVIO AUTOMATICO ===
 window.addEventListener("load", function () {
-  const stagioneKey = "2025-invernale";
-  mostraStatisticheGiocatori(stagioneKey);
+  mostraStatisticheAllTime();
 
   document.querySelectorAll(".start-animation-btn").forEach(btn => {
     btn.addEventListener("click", () => {
