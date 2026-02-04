@@ -486,7 +486,7 @@ function calcolaStatisticheGlobali() {
 
 function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
-  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="2025-invernale"]`);
+  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
   if (!wrapper) return;
 
   const container = document.createElement("div");
