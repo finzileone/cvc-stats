@@ -18,7 +18,8 @@ const stagioni = {
       { MaF: 2.5, PS: 1.5, FP: 2.75, LB: 2.5, BC: 1.5, CM: 1.5, LuF: 2.75, ZG: 0.5, MP: 0.5, LeF: 0.25, PiS: 0.25, AoB: 1.5 },
       { LF: 2.25, MaF: 0.75, MiF: 0.75, PS: 2.25, LB: 0.75, BC: 0.25, CM: 0.25, LuF: 2.25, ZG: 2.75, LeF: 2.25, MM: 0.75, AB: 2.75 },
       { LF: 2, MiF: 0.75, PS: 1, FP: 2, LB: 1, LuF: 2, LeF: 1, PiS: 2, MM: 1, MB: 2.25, AB: 2.25, AoB: 0.75 },
-      { LF: 1, MiF: 0.5, FP: 2.5, BC: 2, CM: 0.5, ZG: 2.5, MP: 2, PiS: 2, MM: 1, MB: 1, AB: 2, AoB: 1 }
+      { LF: 1, MiF: 0.5, FP: 2.5, BC: 2, CM: 0.5, ZG: 2.5, MP: 2, PiS: 2, MM: 1, MB: 1, AB: 2, AoB: 1 },
+      { LF: 0.75, MaF: 2.75, PS: 0.25, LB: 2.25, BC: 0.25, CM: 2.25, LuF: 2.75, MP: 2.75, LeF: 0.75, PiS: 2.75, AB: 0.25}
     ],
     match: [
       {
@@ -255,6 +256,21 @@ const stagioni = {
         sets: ["2-6", "6-2"],
         ritiro: "B"
       },
+      {
+        teamA: ["CM", "LB"],
+        teamB: ["LF", "LeF"],
+        sets: ["6-3", "3-3"]
+      },
+      {
+        teamA: ["PiS", "LuF"],
+        teamB: ["AB", "ML"],
+        sets: ["6-1", "6-3", "6-2"]
+      },
+      {
+        teamA: ["MP", "MaF"],
+        teamB: ["PS", "BC"],
+        sets: ["6-1", "6-2", "4-2"]
+      },
     ]
   },
   "2025-estivo": {
@@ -262,7 +278,22 @@ const stagioni = {
     giornate: [
       {LF: 1.5, MaF: 1.5, PS: 2, FP: 1, LB: 1.5, BC: 0.25, CM: 1.5, SS: 1, ZG: 0.25, PiS: 2.75, MM: 2, MB: 2.75},
       {LF: 0.5, MaF: 2.5, MiF: 0.5, FP: 1.5, LB: 2.75, CM: 1.5, LuF: 2.5, SS: 1.5, ZG: 1.5, GF: 0.25, MB: 0.25, AR: 2.75},
-      {LF: 0.25, MiF: 1.85, PS: 0.25, FP: 2.75, LB: 2.5, CM: 0.5, LuF: 2.5, ZG: 2, MP: 2.75, PiS: 0.95, MB: 0.5}
+      {LF: 0.25, MiF: 1.85, PS: 0.25, FP: 2.75, LB: 2.5, CM: 0.5, LuF: 2.5, ZG: 2, MP: 2.75, PiS: 0.95, MB: 0.5},
+      {LF: 0.5, MaF: 2.5, MiF: 2.5, PS: 0.5, FP: 0.5, BC: 0.5, LuF: 2.5, SS: 0.5, ZG: 0.5, GF: 2.5, PiS: 2.5, MM: 2.5},
+      {LF: 0.5, MaF: 0.5, MiF: 2.5, PS: 2.5, LB: 2.75, BC: 2.75, LuF: 2.75, SS: 0.25, MP: 0.25, GF: 0.25, MeF: 2.75, MM: 0.25},
+      {LF: 1.25, MaF: 2.5, MiF: 0.5, PS: 1.5, FP: 1.75, BC: 1.5, ZG: 1.5, MP: 2.5, GF: 0.5, PiS: 1.25, MM: 1.5, MB: 1.75},
+      {MaF: 0.5, PS: 1.5, FP: 2.5, LB: 0.5, BC: 0.25, LuF: 2.5, ZG: 1.5, MP: 2.75, GF: 0.25, MeF: 2.75, PiS: 1.5, MM: 1.5},
+      {LF: 2.5, MiF: 2.5, FP: 2.5, LB: 2.75, BC: 2.5, LuF: 0.25, ZG: 0.25, MP: 0.5, GF: 0.5, MeF: 0.5, PiS: 0.5, MM: 2.75},
+      {LF: 2.5, MaF: 2.75, MiF: 2.5, PS: 0.5, FP: 0.5, LB: 2.5, LuF: 0.5, SS: 0.5, ZG: 0.25, MP: 0.25, MeF: 2.75, MB: 2.5},
+      {LF: 1.5, MaF: 1.5, MiF: 1.5, PS: 1.5, LB: 1.5, LuF: 0.25, SS: 1.5, GF: 0.25, MeF: 2.75, PiS: 1.5, MM: 2.75, MB: 1.5},
+      {LF: 1.5, MaF: 0.25, PS: 1.5, FP: 0.25, BC: 2.75, ZG: 0.25, MP: 0.25, MeF: 2.75, PiS: 1.5, MM: 2.75, MB: 2.75},
+      {MaF: 2, MiF: 1, FP: 1, LB: 1, BC: 2.75, SS: 0.25, ZG: 0.25, MeF: 2, PiS: 1, MM: 2, MB: 2, AR: 2.75},
+      {LF: 0.55, MaF: 1, MiF: 0.25, PS: 2.75, LB: 2, BC: 2, LuF: 2.75, MP: 2.9, GF: 0.25, PiS: 1, MB: 1.35},
+      {LF: 0.25, MaF: 0.25, MiF: 1.25, PS: 2.75, FP: 2.75, LB: 1.75, BC: 1.25, LuF: 2.75, ZG: 0.25, GF: 1.75, MeF: 2.75, MM: 0.25},
+      {LF: 1.25, MaF: 1.75, MiF: 0.5, PS: 1.25, FP: 2.5, LB: 0.5, BC: 0.5, ZG: 2.5, MP: 1.75, GF: 0.5, PiS: 2.5, MM: 2.5},
+      {LF: 2.75, MaF: 2.75, MiF: 2.5, PS: 0.5, FP: 0.25, LB: 2.75, CM: 2.75, LuF: 2.5, ZG: 0.25, MM: 0.25, AR: 0.25},
+      {LF: 0.25, MaF: 0.25, MiF: 1, PS: 2.75, FP: 2, LB: 2.75, BC: 2.75, LuF: 2.75, ZG: 1, MP: 2, MM: 0.25},
+      {MaF: 0.6, MiF: 1.8, PS: 2.5, FP: 0.5, LB: 1.8, LuF: 2.4, MP: 1.8, PiS: 2.5, MM: 0.6, MB: 0.5}
     ],
     match: []
   }
