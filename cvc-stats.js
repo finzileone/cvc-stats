@@ -256,6 +256,15 @@ const stagioni = {
         ritiro: "B"
       },
     ]
+  },
+  "2025-estivo": {
+    teams: ["AR", "GF", "MeF", "SS", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "PiS", "MM", "MB",],
+    giornate: [
+      {LF: 1.5, MaF: 1.5, PS: 2, FP: 1, LB: 1.5, BC: 0.25, CM: 1.5, SS: 1, ZG: 0.25, PiS: 2.75, MM: 2, MB: 2.75},
+      {LF: 0.5, MaF: 2.5, MiF: 0.5, FP: 1.5, LB: 2.75, CM: 1.5, LuF: 2.5, SS: 1.5, ZG: 1.5, GF: 0.25, MB: 0.25, AR: 2.75},
+      {LF: 0.25, MiF: 1.85, PS: 0.25, FP: 2.75, LB: 2.5, CM: 0.5, LuF: 2.5, ZG: 2, MP: 2.75, PiS: 0.95, MB: 0.5}
+    ],
+    match: []
   }
 };
 
