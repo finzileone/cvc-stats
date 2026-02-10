@@ -769,9 +769,14 @@ function calcolaStatisticheGlobali() {
 
         }
       } else if (isDraw && !isSingolo) {
-        teamA.forEach(p => stats[p]?.matchPari++);
-        teamB.forEach(p => stats[p]?.matchPari++);
-      }
+  teamA.forEach(p => {
+    if (stats[p]) stats[p].matchPari++;
+  });
+  teamB.forEach(p => {
+    if (stats[p]) stats[p].matchPari++;
+  });
+}
+
     });
 
     // === GIORNATE (matchTotali + punti)
