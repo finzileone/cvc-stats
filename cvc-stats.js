@@ -646,7 +646,7 @@ const datiGiocatori = {
   // Aggiungi tutti gli altri...
 };
 
-// === CALCOLO STATS GLOBALI ===
+// === CALCOLO STATS GLOBALI (DOPPIO + SINGOLARE) ===
 function calcolaStatisticheGlobali() {
   const stats = {};
   const torneiGiocati = {};
@@ -654,12 +654,15 @@ function calcolaStatisticheGlobali() {
   Object.entries(stagioni).forEach(([stagioneKey, stagione]) => {
     const { teams, match, giornate } = stagione;
 
+    // Inizializzazione giocatori
     teams.forEach(p => {
       if (!stats[p]) {
         stats[p] = {
           matchVinti: 0,
           matchPersi: 0,
           matchPari: 0,
+          singoliVinti: 0,
+          singoliPersi: 0,
           setVinti: 0,
           setPersi: 0,
           gameVinti: 0,
@@ -673,7 +676,10 @@ function calcolaStatisticheGlobali() {
       torneiGiocati[p].add(stagioneKey);
     });
 
-    match.forEach(({ teamA, teamB, sets, ritiro }) => {
+    // === MATCH ===
+    match.forEach(({ teamA, teamB, sets, ritiro, tipo }) => {
+      const isSingolo = tipo === "singolo";
+
       const keyA = teamA.join("|");
       const keyB = teamB.join("|");
       const gameStats = { [keyA]: 0, [keyB]: 0 };
@@ -689,16 +695,26 @@ function calcolaStatisticheGlobali() {
           gameStats[keyA] += a;
           gameStats[keyB] += b;
 
-          if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
-            if (a > b) setStats[keyA]++;
-            else if (b > a) setStats[keyB]++;
+          // Set vinto:
+          if (isSingolo) {
+            if (a >= 5 || b >= 5) {
+              if (a > b) setStats[keyA]++;
+              else if (b > a) setStats[keyB]++;
+            }
+          } else {
+            if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
+              if (a > b) setStats[keyA]++;
+              else if (b > a) setStats[keyB]++;
+            }
           }
         } else {
+          // tie-break → solo set
           if (a > b) setStats[keyA]++;
           else if (b > a) setStats[keyB]++;
         }
       });
 
+      // === ESITO MATCH ===
       let winner = null;
       let isDraw = false;
 
@@ -712,21 +728,13 @@ function calcolaStatisticheGlobali() {
 
         if (setsA > setsB) winner = teamA;
         else if (setsB > setsA) winner = teamB;
-        else {
-          if (sets.length < 3) {
-            isDraw = true;
-          } else {
-            const lastSet = sets[2];
-            const score = typeof lastSet === "object" ? lastSet.score : lastSet;
-            const [a, b] = score.split("-").map(Number);
-
-            if (a > b) winner = teamA;
-            else if (b > a) winner = teamB;
-            else isDraw = true;
-          }
+        else if (!isSingolo) {
+          // Pareggio ammesso solo nel doppio
+          isDraw = true;
         }
       }
 
+      // === SET E GAME (sempre globali)
       teamA.filter(p => stats[p]).forEach(p => {
         stats[p].setVinti += setStats[keyA];
         stats[p].setPersi += setStats[keyB];
@@ -741,15 +749,22 @@ function calcolaStatisticheGlobali() {
         stats[p].gamePersi += gameStats[keyA];
       });
 
+      // === VITTORIE / SCONFITTE
       if (winner) {
-        winner.filter(p => stats[p]).forEach(p => stats[p].matchVinti++);
-        (winner === teamA ? teamB : teamA).filter(p => stats[p]).forEach(p => stats[p].matchPersi++);
-      } else if (isDraw) {
-        teamA.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
-        teamB.filter(p => stats[p]).forEach(p => stats[p].matchPari++);
+        if (isSingolo) {
+          winner.forEach(p => stats[p]?.singoliVinti++);
+          (winner === teamA ? teamB : teamA).forEach(p => stats[p]?.singoliPersi++);
+        } else {
+          winner.forEach(p => stats[p]?.matchVinti++);
+          (winner === teamA ? teamB : teamA).forEach(p => stats[p]?.matchPersi++);
+        }
+      } else if (isDraw && !isSingolo) {
+        teamA.forEach(p => stats[p]?.matchPari++);
+        teamB.forEach(p => stats[p]?.matchPari++);
       }
     });
 
+    // === GIORNATE (matchTotali + punti)
     giornate.forEach(giornata => {
       Object.entries(giornata).forEach(([p, punti]) => {
         if (punti != null && stats[p]) {
@@ -766,6 +781,7 @@ function calcolaStatisticheGlobali() {
 
   return stats;
 }
+
 
 function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
@@ -795,6 +811,8 @@ function mostraStatisticheAllTime() {
         <th>Vinte</th>
         <th>Perse</th>
         <th>Pari</th>
+        <th>Singoli V</th>
+        <th>Singoli P</th>
         <th>% Vittorie</th>
         <th>Set Vinti</th>
         <th>Set Persi</th>
@@ -834,6 +852,8 @@ function mostraStatisticheAllTime() {
         <td>${s.matchVinti}</td>
         <td>${s.matchPersi}</td>
         <td>${s.matchPari}</td>
+        <td>${s.singoliVinti}</td>
+        <td>${s.singoliPersi}</td>
         <td>${percentualeVittorie}</td>
         <td>${s.setVinti}</td>
         <td>${s.setPersi}</td>
