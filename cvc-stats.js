@@ -752,11 +752,21 @@ function calcolaStatisticheGlobali() {
       // === VITTORIE / SCONFITTE
       if (winner) {
         if (isSingolo) {
-          winner.forEach(p => stats[p]?.singoliVinti++);
-          (winner === teamA ? teamB : teamA).forEach(p => stats[p]?.singoliPersi++);
+          winner.forEach(p => {
+  if (stats[p]) stats[p].singoliVinti++;
+});
+(winner === teamA ? teamB : teamA).forEach(p => {
+  if (stats[p]) stats[p].singoliPersi++;
+});
+
         } else {
-          winner.forEach(p => stats[p]?.matchVinti++);
-          (winner === teamA ? teamB : teamA).forEach(p => stats[p]?.matchPersi++);
+         winner.forEach(p => {
+  if (stats[p]) stats[p].matchVinti++;
+});
+(winner === teamA ? teamB : teamA).forEach(p => {
+  if (stats[p]) stats[p].matchPersi++;
+});
+
         }
       } else if (isDraw && !isSingolo) {
         teamA.forEach(p => stats[p]?.matchPari++);
