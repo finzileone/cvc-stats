@@ -611,7 +611,76 @@ const stagioni = {
         teamA: ["PS", "PiS"],
         teamB: ["FP", "MB"],
         sets: ["6-3", "6-3"]
-      }
+      },
+      {
+        teamA: ["MiF"],
+        teamB: ["PiS"],
+        tipo: "singolo",
+        sets: ["5-4"]
+      },
+      {
+        teamA: ["ZG"],
+        teamB: ["MiF"],
+        tipo: "singolo",
+        sets: ["5-2"]
+      },
+      {
+        teamA: ["ZG"],
+        teamB: ["PiS"],
+        tipo: "singolo",
+        sets: ["4-4"]
+      },
+      {
+        teamA: ["MP"],
+        teamB: ["MB"],
+        tipo: "singolo",
+        sets: ["5-0"]
+      },
+      {
+        teamA: ["MP"],
+        teamB: ["LF"],
+        tipo: "singolo",
+        sets: ["5-0"]
+      },
+      {
+        teamA: ["MB"],
+        teamB: ["LF"],
+        tipo: "singolo",
+        sets: ["5-2"]
+      },
+      {
+        teamA: ["MP"],
+        teamB: ["MaF"],
+        tipo: "singolo",
+        sets: ["5-2"]
+      },
+      {
+        teamA: ["LuF"],
+        teamB: ["MiF"],
+        tipo: "singolo",
+        sets: ["5-0"]
+      },
+      {
+        teamA: ["LB"],
+        teamB: ["MM"],
+        tipo: "singolo",
+        sets: ["5-1"]
+      },
+      {
+        teamA: ["LuF", "MiF"],
+        teamB: ["LB", "MM"],
+        sets: ["4-3"]
+      },
+      {
+        teamA: ["LB", "MM"],
+        teamB: ["MaF", "MP"],
+        sets: ["5-1"]
+      },
+      {
+        teamA: ["LuF", "MiF"],
+        teamB: ["MaF", "MP"],
+        sets: ["5-2"]
+      },
     ]
   }
 };
