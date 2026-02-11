@@ -272,6 +272,34 @@ const stagioni = {
         teamB: ["PS", "BC"],
         sets: ["6-1", "6-2", "4-2"]
       },
+      {
+        teamA: ["MaF", "LB"],
+        teamB: ["ZG", "AB"],
+        sets: ["6-3", "6-6"]
+      },
+      {
+        teamA: ["LuF", "MiF"],
+        teamB: ["LF", "BC"],
+        sets: ["6-4", "6-2", "2-2"]
+      },
+      {
+        teamA: ["MM"],
+        teamB: ["LeF"],
+        tipo: "singolo",
+        sets: ["5-4"]
+      },
+      {
+        teamA: ["MM"],
+        teamB: ["PS"],
+        tipo: "singolo",
+        sets: ["5-1"]
+      },
+      {
+        teamA: ["LeF"],
+        teamB: ["PS"],
+        tipo: "singolo",
+        sets: ["5-2"]
+      },
     ]
   },
   "2025-estivo": {
