@@ -395,6 +395,11 @@ const stagioni = {
         teamB: ["ZG", "PiS"],
         sets: ["6-2", "6-2", "3-2"]
       },
+      {
+        teamA: ["LuF", "LT"],
+        teamB: ["LF", "AoB"],
+        sets: ["1-6", "2-6", "1-4"]
+      },
     ]
   },
   "2025-estivo": {
