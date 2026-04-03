@@ -965,20 +965,33 @@ function calcolaStatisticheGlobali() {
       let isDraw = false;
 
       if (ritiro === "A") {
-        winner = teamB;
-      } else if (ritiro === "B") {
-        winner = teamA;
-      } else {
-        const setsA = setStats[keyA];
-        const setsB = setStats[keyB];
+  winner = teamB;
+} else if (ritiro === "B") {
+  winner = teamA;
+} else {
+  const setsA = setStats[keyA];
+  const setsB = setStats[keyB];
 
-        if (setsA > setsB) winner = teamA;
-        else if (setsB > setsA) winner = teamB;
-        else if (!isSingolo) {
-          // Pareggio ammesso solo nel doppio
-          isDraw = true;
-        }
-      }
+  if (setsA > setsB) {
+    winner = teamA;
+  } else if (setsB > setsA) {
+    winner = teamB;
+  } else {
+    // set pari: guardo l'ultimo set giocato
+    const lastSet = sets[sets.length - 1];
+    const lastScore = typeof lastSet === "object" ? lastSet.score : lastSet;
+    const [a, b] = lastScore.split("-").map(Number);
+
+    if (a > b) {
+      winner = teamA;
+    } else if (b > a) {
+      winner = teamB;
+    } else if (!isSingolo) {
+      // solo nel doppio è ammesso il pareggio
+      isDraw = true;
+    }
+  }
+}
 
       // === SET E GAME (sempre globali)
       teamA.filter(p => stats[p]).forEach(p => {
