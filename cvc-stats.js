@@ -846,33 +846,39 @@ function avviaAnimazioneClassifica(stagioneKey) {
   const screenWidth = window.innerWidth;
   const isDesktop = screenWidth >= 992;
 
-  let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 0.55;
-  let barHeight = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
+  let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 0.45;
+  let barThickness = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
   let spacingY = screenWidth < 992 ? 0.35 : 0.25;
-  let spacingX = isDesktop ? 3.5 : 0;
-  const totalRowHeight = barHeight + spacingY;
+  let spacingX = isDesktop ? 2.8 : 0;
+  const totalRowHeight = barThickness + spacingY;
 
-  // Impostazioni iniziali
+  // reset iniziale
   if (isDesktop) {
     gsap.set(bars, {
       autoAlpha: 0,
       height: "0rem",
-      width: `${barHeight}rem`,
+      width: `${barThickness}rem`,
       x: 0,
       y: 0,
-      transformOrigin: "bottom center"
+      clearProps: "transform"
     });
   } else {
     gsap.set(bars, {
       autoAlpha: 0,
       width: "0rem",
-      height: `${barHeight}rem`,
+      height: `${barThickness}rem`,
       x: 0,
-      y: 0
+      y: 0,
+      clearProps: "transform"
     });
   }
 
-  gsap.set(logos, { autoAlpha: 0, x: 0, y: 0 });
+  gsap.set(logos, {
+    autoAlpha: 0,
+    x: 0,
+    y: 0,
+    clearProps: "transform"
+  });
 
   let punteggi = Object.fromEntries(teams.map(t => [t, 0]));
   let lastScores = Object.fromEntries(teams.map(t => [t, 0]));
@@ -894,7 +900,7 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
       const scoreEl = bar.querySelector(".team_score");
       const barSize = punteggi[team] * scaleFactor + "rem";
-      const logoOffset = (barHeight - 2) / 2;
+      const logoOffset = (barThickness - 2) / 2;
 
       if (isDesktop) {
         const x = i * spacingX;
@@ -906,13 +912,14 @@ function avviaAnimazioneClassifica(stagioneKey) {
           ease: "none"
         }, "giornata" + index);
 
+        // logo sotto la colonna
         tl.to(logo, {
-  x: `${x}rem`,
-  y: `-2.5rem`,
-  autoAlpha: 1,
-  duration: 2,
-  ease: "none"
-}, "giornata" + index);
+          x: `${x}rem`,
+          y: "1.2rem",
+          autoAlpha: 1,
+          duration: 2,
+          ease: "none"
+        }, "giornata" + index);
 
       } else {
         const y = i * totalRowHeight;
