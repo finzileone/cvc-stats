@@ -851,12 +851,10 @@ function avviaAnimazioneClassifica(stagioneKey) {
   const spacingY = screenWidth < 992 ? 0.35 : 0.25;
   const totalRowHeight = barThickness + spacingY;
 
-  // desktop layout
-  const colSpacing = 3.2;     // distanza tra colonne
-  const baseBottom = 4.5;     // baseline delle barre
-  const logoBottom = 1.2;     // logo sotto la barra
+  const colSpacing = 3.2;
+  const baseBottom = 4.5;
+  const logoBottom = 1.2;
 
-  // reset
   gsap.killTweensOf([bars, logos]);
 
   if (isDesktop) {
@@ -871,37 +869,40 @@ function avviaAnimazioneClassifica(stagioneKey) {
         height: "0rem",
         autoAlpha: 0,
         x: 0,
-        y: 0,
-        clearProps: "transform"
+        y: 0
       });
     });
 
     logos.forEach((logo, i) => {
       gsap.set(logo, {
-  position: "absolute",
-  left: `${i * colSpacing + barThickness / 2}rem`,
-  bottom: `${logoBottom}rem`,
-  autoAlpha: 0,
-  xPercent: -50,
-  x: 0,
-  y: 0
-});
+        position: "absolute",
+        left: `${i * colSpacing + barThickness / 2}rem`,
+        bottom: `${logoBottom}rem`,
+        autoAlpha: 0,
+        xPercent: -50,
+        x: 0,
+        y: 0
+      });
     });
   } else {
-    gsap.set(bars, {
-      autoAlpha: 0,
-      width: "0rem",
-      height: `${barThickness}rem`,
-      x: 0,
-      y: 0,
-      clearProps: "transform,left,right,top,bottom,position"
+    bars.forEach(bar => {
+      gsap.set(bar, { clearProps: "all" });
+      gsap.set(bar, {
+        autoAlpha: 0,
+        width: "0rem",
+        height: `${barThickness}rem`,
+        x: 0,
+        y: 0
+      });
     });
 
-    gsap.set(logos, {
-      autoAlpha: 0,
-      x: 0,
-      y: 0,
-      clearProps: "transform,left,right,top,bottom,position"
+    logos.forEach(logo => {
+      gsap.set(logo, { clearProps: "all" });
+      gsap.set(logo, {
+        autoAlpha: 0,
+        x: 0,
+        y: 0
+      });
     });
   }
 
@@ -928,21 +929,19 @@ function avviaAnimazioneClassifica(stagioneKey) {
       const label = `giornata${index}`;
 
       if (isDesktop) {
-        const left = `${i * colSpacing}rem`;
-
         tl.to(bar, {
-          left,
+          left: `${i * colSpacing}rem`,
           height: barSize,
           duration: 2,
           ease: "none"
         }, label);
 
         tl.to(logo, {
-  left: `${i * colSpacing + barThickness / 2}rem`,
-  autoAlpha: 1,
-  duration: 2,
-  ease: "none"
-}, label);
+          left: `${i * colSpacing + barThickness / 2}rem`,
+          autoAlpha: 1,
+          duration: 2,
+          ease: "none"
+        }, label);
       } else {
         const y = `${i * totalRowHeight}rem`;
         const logoOffset = (barThickness - 2) / 2;
