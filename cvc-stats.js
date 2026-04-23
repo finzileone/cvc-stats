@@ -878,14 +878,14 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
     logos.forEach((logo, i) => {
       gsap.set(logo, {
-        position: "absolute",
-        left: `${i * colSpacing}rem`,
-        bottom: `${logoBottom}rem`,
-        autoAlpha: 0,
-        x: 0,
-        y: 0,
-        clearProps: "transform"
-      });
+  position: "absolute",
+  left: `${i * colSpacing + barThickness / 2}rem`,
+  bottom: `${logoBottom}rem`,
+  autoAlpha: 0,
+  xPercent: -50,
+  x: 0,
+  y: 0
+});
     });
   } else {
     gsap.set(bars, {
@@ -938,11 +938,11 @@ function avviaAnimazioneClassifica(stagioneKey) {
         }, label);
 
         tl.to(logo, {
-          left,
-          autoAlpha: 1,
-          duration: 2,
-          ease: "none"
-        }, label);
+  left: `${i * colSpacing + barThickness / 2}rem`,
+  autoAlpha: 1,
+  duration: 2,
+  ease: "none"
+}, label);
       } else {
         const y = `${i * totalRowHeight}rem`;
         const logoOffset = (barThickness - 2) / 2;
