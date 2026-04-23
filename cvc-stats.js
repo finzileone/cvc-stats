@@ -851,7 +851,7 @@ function avviaAnimazioneClassifica(stagioneKey) {
   const spacingY = screenWidth < 992 ? 0.35 : 0.25;
   const totalRowHeight = barThickness + spacingY;
 
-  const colSpacing = 3.2;
+  const colSpacing = 2;
   const baseBottom = 4.5;
   const logoBottom = 1.2;
 
