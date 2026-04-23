@@ -841,38 +841,43 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
   const bars = wrapper.querySelectorAll(".team_bar");
   const logos = wrapper.querySelectorAll(".team_logo");
-
-
-
   if (bars.length === 0 || logos.length === 0) return;
-
- if (isDesktop) {
-  gsap.set(bars, { autoAlpha: 0, height: "0rem", x: 0, y: 0 });
-} else {
-  gsap.set(bars, { autoAlpha: 0, width: "0rem", x: 0, y: 0 });
-}
-gsap.set(logos, { autoAlpha: 0, x: 0, y: 0 });
-  gsap.set(logos, { autoAlpha: 0, y: 0 });
 
   const screenWidth = window.innerWidth;
   const isDesktop = screenWidth >= 992;
+
   let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 1.4;
   let barHeight = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
   let spacingY = screenWidth < 992 ? 0.35 : 0.25;
-  let spacingX = isDesktop ? 2.5 : 0;
+  let spacingX = isDesktop ? 3.5 : 0;
   const totalRowHeight = barHeight + spacingY;
 
-  bars.forEach(bar => {
+  // Impostazioni iniziali
   if (isDesktop) {
-    bar.style.width = `${barHeight}rem`;
+    gsap.set(bars, {
+      autoAlpha: 0,
+      height: "0rem",
+      width: `${barHeight}rem`,
+      x: 0,
+      y: 0,
+      transformOrigin: "bottom center"
+    });
   } else {
-    bar.style.height = `${barHeight}rem`;
+    gsap.set(bars, {
+      autoAlpha: 0,
+      width: "0rem",
+      height: `${barHeight}rem`,
+      x: 0,
+      y: 0
+    });
   }
-});
+
+  gsap.set(logos, { autoAlpha: 0, x: 0, y: 0 });
 
   let punteggi = Object.fromEntries(teams.map(t => [t, 0]));
   let lastScores = Object.fromEntries(teams.map(t => [t, 0]));
   const tl = gsap.timeline();
+
   tl.to([bars, logos], { autoAlpha: 1, duration: 0.5 });
 
   giornate.forEach((giornata, index) => {
@@ -881,54 +886,56 @@ gsap.set(logos, { autoAlpha: 0, x: 0, y: 0 });
     });
 
     const classifica = [...teams].sort((a, b) => punteggi[b] - punteggi[a]);
+
     classifica.forEach((team, i) => {
       const bar = wrapper.querySelector(`.team_bar[data-team="${team}"]`);
       const logo = wrapper.querySelector(`.team_logo[data-team="${team}"]`);
       if (!bar || !logo) return;
 
       const scoreEl = bar.querySelector(".team_score");
-const logoOffset = (barHeight - 2) / 2;
-const barSize = punteggi[team] * scaleFactor + "rem";
+      const barSize = punteggi[team] * scaleFactor + "rem";
+      const logoOffset = (barHeight - 2) / 2;
 
-if (isDesktop) {
-  const x = i * spacingX;
+      if (isDesktop) {
+        const x = i * spacingX;
 
-  tl.to(bar, {
-    x: `${x}rem`,
-    height: barSize,
-    duration: 2,
-    ease: "none"
-  }, "giornata" + index);
+        tl.to(bar, {
+          x: `${x}rem`,
+          height: barSize,
+          duration: 2,
+          ease: "none"
+        }, "giornata" + index);
 
-  tl.to(logo, {
-    x: `${x}rem`,
-    autoAlpha: 1,
-    duration: 2,
-    ease: "none"
-  }, "giornata" + index);
+        tl.to(logo, {
+          x: `${x}rem`,
+          y: `0rem`,
+          autoAlpha: 1,
+          duration: 2,
+          ease: "none"
+        }, "giornata" + index);
 
-} else {
-  const y = i * totalRowHeight;
+      } else {
+        const y = i * totalRowHeight;
 
-  tl.to(bar, {
-    y: `${y}rem`,
-    width: barSize,
-    duration: 2,
-    ease: "none"
-  }, "giornata" + index);
+        tl.to(bar, {
+          y: `${y}rem`,
+          width: barSize,
+          duration: 2,
+          ease: "none"
+        }, "giornata" + index);
 
-  tl.to(logo, {
-    y: `${y + logoOffset}rem`,
-    autoAlpha: 1,
-    duration: 2,
-    ease: "none"
-  }, "giornata" + index);
-}
-
+        tl.to(logo, {
+          y: `${y + logoOffset}rem`,
+          autoAlpha: 1,
+          duration: 2,
+          ease: "none"
+        }, "giornata" + index);
+      }
 
       if (scoreEl) {
         const currentScore = lastScores[team];
         lastScores[team] = punteggi[team];
+
         tl.to({ val: currentScore }, {
           val: punteggi[team],
           duration: 2,
