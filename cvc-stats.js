@@ -28,7 +28,8 @@ const stagioni = {
       { MaF: 1, MiF: 2.75, PS: 0.25, FP: 2.75, BC: 0.25, LuF: 0.25, MP: 2.75, LT: 0.25, MM: 2, MB: 1, AB: 2, AoB: 2.75},
       { LF: 0.5, MiF: 0.25, PS: 2.75, FP: 2.75, LB: 0.5, ZG: 1.5, MP: 2.5, LeF: 1.5, LT: 0.25, PiS: 2.5, MM: 1.5, MB: 1.5},
       { MaF: 0.25, MiF: 1.25, FP: 2.5, LB: 0.25, BC: 0.5, LuF: 2.75, ZG: 1.75, LT: 0.5, PiS: 1.75, MM: 2.75, MB: 2.5, AoB: 1.25},
-      { LeF: 1.5, MiF: 1.5, LuF: 1.5, BC: 1.5, PiS: 1.75, MP: 1.25, PS: 1.25, MaF: 1.75, LB: 2.5, FP: 2.5, AoB: 0.5, ZG: 0.5}
+      { LeF: 1.5, MiF: 1.5, LuF: 1.5, BC: 1.5, PiS: 1.75, MP: 1.25, PS: 1.25, MaF: 1.75, LB: 2.5, FP: 2.5, AoB: 0.5, ZG: 0.5},
+      { LeF: 0.75, LF: 1.75, MaF: 1.25, PS: 1, LB: 1, BC: 2.25, LuF: 2, LT: 2, PiS: 1.25, MM: 0.75, MB: 2.25, AoB: 1.75}
     ],
     match: [
       {
@@ -463,6 +464,22 @@ const stagioni = {
         teamA: ["MaF", "PiS"],
         teamB: ["PS", "MP"],
         sets: ["6-3", "3-4"]
+      },
+      {
+        teamA: ["LeF", "MM"],
+        teamB: ["MB", "BC"],
+        sets: ["4-6", "3-6", "1-2"],
+        ritiro: "B"
+      },
+      {
+        teamA: ["LF", "AoB"],
+        teamB: ["PiS", "MaF"],
+        sets: ["7-5", "3-4"]
+      },
+      {
+        teamA: ["LuF", "LT"],
+        teamB: ["PS", "LB"],
+        sets: ["4-6", "6-2", "3-1"]
       },
     ]
   },
