@@ -852,15 +852,23 @@ function avviaAnimazioneClassifica(stagioneKey) {
   let spacingX = isDesktop ? 2.8 : 0;
   const totalRowHeight = barThickness + spacingY;
 
-  // reset iniziale
+  // baseline desktop
+  const desktopBarY = 12;   // alza/abbassa le colonne
+  const desktopLogoY = 14;  // logo sotto le colonne
+
   if (isDesktop) {
     gsap.set(bars, {
       autoAlpha: 0,
-      height: "0rem",
       width: `${barThickness}rem`,
+      height: "0rem",
       x: 0,
-      y: 0,
-      clearProps: "transform"
+      y: `${desktopBarY}rem`
+    });
+
+    gsap.set(logos, {
+      autoAlpha: 0,
+      x: 0,
+      y: `${desktopLogoY}rem`
     });
   } else {
     gsap.set(bars, {
@@ -868,17 +876,15 @@ function avviaAnimazioneClassifica(stagioneKey) {
       width: "0rem",
       height: `${barThickness}rem`,
       x: 0,
-      y: 0,
-      clearProps: "transform"
+      y: 0
+    });
+
+    gsap.set(logos, {
+      autoAlpha: 0,
+      x: 0,
+      y: 0
     });
   }
-
-  gsap.set(logos, {
-    autoAlpha: 0,
-    x: 0,
-    y: 0,
-    clearProps: "transform"
-  });
 
   let punteggi = Object.fromEntries(teams.map(t => [t, 0]));
   let lastScores = Object.fromEntries(teams.map(t => [t, 0]));
@@ -907,15 +913,15 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
         tl.to(bar, {
           x: `${x}rem`,
+          y: `${desktopBarY}rem`,
           height: barSize,
           duration: 2,
           ease: "none"
         }, "giornata" + index);
 
-        // logo sotto la colonna
         tl.to(logo, {
           x: `${x}rem`,
-          y: "1.2rem",
+          y: `${desktopLogoY}rem`,
           autoAlpha: 1,
           duration: 2,
           ease: "none"
