@@ -884,27 +884,39 @@ function avviaAnimazioneClassifica(stagioneKey) {
         y: 0
       });
     });
-  } else {
-    bars.forEach(bar => {
-      gsap.set(bar, { clearProps: "all" });
-      gsap.set(bar, {
-        autoAlpha: 0,
-        width: "0rem",
-        height: `${barThickness}rem`,
-        x: 0,
-        y: 0
-      });
-    });
+ } else {
+  bars.forEach(bar => {
+    gsap.set(bar, { clearProps: "all" });
+    bar.style.position = "";
+    bar.style.left = "";
+    bar.style.right = "";
+    bar.style.top = "";
+    bar.style.bottom = "";
+    bar.style.width = "0rem";
+    bar.style.height = `${barThickness}rem`;
+  });
 
-    logos.forEach(logo => {
-      gsap.set(logo, { clearProps: "all" });
-      gsap.set(logo, {
-        autoAlpha: 0,
-        x: 0,
-        y: 0
-      });
-    });
-  }
+  logos.forEach(logo => {
+    gsap.set(logo, { clearProps: "all" });
+    logo.style.position = "";
+    logo.style.left = "";
+    logo.style.right = "";
+    logo.style.top = "";
+    logo.style.bottom = "";
+  });
+
+  gsap.set(bars, {
+    autoAlpha: 0,
+    x: 0,
+    y: 0
+  });
+
+  gsap.set(logos, {
+    autoAlpha: 0,
+    x: 0,
+    y: 0
+  });
+}
 
   const punteggi = Object.fromEntries(teams.map(t => [t, 0]));
   const lastScores = Object.fromEntries(teams.map(t => [t, 0]));
@@ -943,23 +955,23 @@ function avviaAnimazioneClassifica(stagioneKey) {
           ease: "none"
         }, label);
       } else {
-        const y = `${i * totalRowHeight}rem`;
-        const logoOffset = (barThickness - 2) / 2;
+  const y = `${i * totalRowHeight}rem`;
+  const logoOffset = (barThickness - 2) / 2;
 
-        tl.to(bar, {
-          y,
-          width: barSize,
-          duration: 2,
-          ease: "none"
-        }, label);
+  tl.to(bar, {
+    y,
+    width: barSize,
+    duration: 2,
+    ease: "none"
+  }, label);
 
-        tl.to(logo, {
-          y: `${i * totalRowHeight + logoOffset}rem`,
-          autoAlpha: 1,
-          duration: 2,
-          ease: "none"
-        }, label);
-      }
+  tl.to(logo, {
+    y: `${i * totalRowHeight + logoOffset}rem`,
+    autoAlpha: 1,
+    duration: 2,
+    ease: "none"
+  }, label);
+}
 
       if (scoreEl) {
         const currentScore = lastScores[team];
