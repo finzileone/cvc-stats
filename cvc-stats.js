@@ -846,7 +846,7 @@ function avviaAnimazioneClassifica(stagioneKey) {
   const screenWidth = window.innerWidth;
   const isDesktop = screenWidth >= 992;
 
-  let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 1.4;
+  let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 0.55;
   let barHeight = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
   let spacingY = screenWidth < 992 ? 0.35 : 0.25;
   let spacingX = isDesktop ? 3.5 : 0;
@@ -907,12 +907,12 @@ function avviaAnimazioneClassifica(stagioneKey) {
         }, "giornata" + index);
 
         tl.to(logo, {
-          x: `${x}rem`,
-          y: `0rem`,
-          autoAlpha: 1,
-          duration: 2,
-          ease: "none"
-        }, "giornata" + index);
+  x: `${x}rem`,
+  y: `-2.5rem`,
+  autoAlpha: 1,
+  duration: 2,
+  ease: "none"
+}, "giornata" + index);
 
       } else {
         const y = i * totalRowHeight;
