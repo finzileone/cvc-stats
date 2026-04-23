@@ -846,7 +846,12 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
   if (bars.length === 0 || logos.length === 0) return;
 
-  gsap.set(bars, { autoAlpha: 0, width: "0rem", y: 0 });
+ if (isDesktop) {
+  gsap.set(bars, { autoAlpha: 0, height: "0rem", x: 0, y: 0 });
+} else {
+  gsap.set(bars, { autoAlpha: 0, width: "0rem", x: 0, y: 0 });
+}
+gsap.set(logos, { autoAlpha: 0, x: 0, y: 0 });
   gsap.set(logos, { autoAlpha: 0, y: 0 });
 
   const screenWidth = window.innerWidth;
@@ -857,7 +862,13 @@ function avviaAnimazioneClassifica(stagioneKey) {
   let spacingX = isDesktop ? 2.5 : 0;
   const totalRowHeight = barHeight + spacingY;
 
-  bars.forEach(bar => (bar.style.height = `${barHeight}rem`));
+  bars.forEach(bar => {
+  if (isDesktop) {
+    bar.style.width = `${barHeight}rem`;
+  } else {
+    bar.style.height = `${barHeight}rem`;
+  }
+});
 
   let punteggi = Object.fromEntries(teams.map(t => [t, 0]));
   let lastScores = Object.fromEntries(teams.map(t => [t, 0]));
@@ -875,16 +886,16 @@ function avviaAnimazioneClassifica(stagioneKey) {
       const logo = wrapper.querySelector(`.team_logo[data-team="${team}"]`);
       if (!bar || !logo) return;
 
-      const width = punteggi[team] * scaleFactor + "rem";
-const scoreEl = bar.querySelector(".team_score");
+      const scoreEl = bar.querySelector(".team_score");
 const logoOffset = (barHeight - 2) / 2;
+const barSize = punteggi[team] * scaleFactor + "rem";
 
 if (isDesktop) {
   const x = i * spacingX;
 
   tl.to(bar, {
     x: `${x}rem`,
-    width,
+    height: barSize,
     duration: 2,
     ease: "none"
   }, "giornata" + index);
@@ -901,7 +912,7 @@ if (isDesktop) {
 
   tl.to(bar, {
     y: `${y}rem`,
-    width,
+    width: barSize,
     duration: 2,
     ease: "none"
   }, "giornata" + index);
