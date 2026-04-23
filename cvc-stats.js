@@ -997,20 +997,25 @@ function calcolaStatisticheGlobali() {
       let winner = null;
       let isDraw = false;
 
-      if (ritiro === "A") {
-  winner = teamB;
-} else if (ritiro === "B") {
-  winner = teamA;
-} else {
-  const setsA = setStats[keyA];
-  const setsB = setStats[keyB];
+      const setsA = setStats[keyA];
+const setsB = setStats[keyB];
 
+if (ritiro === "A" || ritiro === "B") {
+  // Se il match era già deciso dopo i primi due set, il ritiro non cambia il vincitore
   if (setsA > setsB) {
     winner = teamA;
   } else if (setsB > setsA) {
     winner = teamB;
   } else {
-    // set pari: guardo l'ultimo set giocato
+    // Match non ancora deciso: il ritiro dà la vittoria all'altra squadra
+    winner = ritiro === "A" ? teamB : teamA;
+  }
+} else {
+  if (setsA > setsB) {
+    winner = teamA;
+  } else if (setsB > setsA) {
+    winner = teamB;
+  } else {
     const lastSet = sets[sets.length - 1];
     const lastScore = typeof lastSet === "object" ? lastSet.score : lastSet;
     const [a, b] = lastScore.split("-").map(Number);
@@ -1020,7 +1025,6 @@ function calcolaStatisticheGlobali() {
     } else if (b > a) {
       winner = teamB;
     } else if (!isSingolo) {
-      // solo nel doppio è ammesso il pareggio
       isDraw = true;
     }
   }
