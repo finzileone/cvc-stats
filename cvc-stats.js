@@ -841,34 +841,51 @@ function avviaAnimazioneClassifica(stagioneKey) {
 
   const bars = wrapper.querySelectorAll(".team_bar");
   const logos = wrapper.querySelectorAll(".team_logo");
-  if (bars.length === 0 || logos.length === 0) return;
+  if (!bars.length || !logos.length) return;
 
   const screenWidth = window.innerWidth;
   const isDesktop = screenWidth >= 992;
 
-  let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 0.45;
-  let barThickness = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
-  let spacingY = screenWidth < 992 ? 0.35 : 0.25;
-  let spacingX = isDesktop ? 2.8 : 0;
+  const scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 0.45;
+  const barThickness = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
+  const spacingY = screenWidth < 992 ? 0.35 : 0.25;
   const totalRowHeight = barThickness + spacingY;
 
-  // baseline desktop
-  const desktopBarY = 12;   // alza/abbassa le colonne
-  const desktopLogoY = 14;  // logo sotto le colonne
+  // desktop layout
+  const colSpacing = 3.2;     // distanza tra colonne
+  const baseBottom = 4.5;     // baseline delle barre
+  const logoBottom = 1.2;     // logo sotto la barra
+
+  // reset
+  gsap.killTweensOf([bars, logos]);
 
   if (isDesktop) {
-    gsap.set(bars, {
-      autoAlpha: 0,
-      width: `${barThickness}rem`,
-      height: "0rem",
-      x: 0,
-      y: `${desktopBarY}rem`
+    gsap.set(wrapper, { position: "relative" });
+
+    bars.forEach((bar, i) => {
+      gsap.set(bar, {
+        position: "absolute",
+        left: `${i * colSpacing}rem`,
+        bottom: `${baseBottom}rem`,
+        width: `${barThickness}rem`,
+        height: "0rem",
+        autoAlpha: 0,
+        x: 0,
+        y: 0,
+        clearProps: "transform"
+      });
     });
 
-    gsap.set(logos, {
-      autoAlpha: 0,
-      x: 0,
-      y: `${desktopLogoY}rem`
+    logos.forEach((logo, i) => {
+      gsap.set(logo, {
+        position: "absolute",
+        left: `${i * colSpacing}rem`,
+        bottom: `${logoBottom}rem`,
+        autoAlpha: 0,
+        x: 0,
+        y: 0,
+        clearProps: "transform"
+      });
     });
   } else {
     gsap.set(bars, {
@@ -876,21 +893,23 @@ function avviaAnimazioneClassifica(stagioneKey) {
       width: "0rem",
       height: `${barThickness}rem`,
       x: 0,
-      y: 0
+      y: 0,
+      clearProps: "transform,left,right,top,bottom,position"
     });
 
     gsap.set(logos, {
       autoAlpha: 0,
       x: 0,
-      y: 0
+      y: 0,
+      clearProps: "transform,left,right,top,bottom,position"
     });
   }
 
-  let punteggi = Object.fromEntries(teams.map(t => [t, 0]));
-  let lastScores = Object.fromEntries(teams.map(t => [t, 0]));
+  const punteggi = Object.fromEntries(teams.map(t => [t, 0]));
+  const lastScores = Object.fromEntries(teams.map(t => [t, 0]));
   const tl = gsap.timeline();
 
-  tl.to([bars, logos], { autoAlpha: 1, duration: 0.5 });
+  tl.to([bars, logos], { autoAlpha: 1, duration: 0.4 });
 
   giornate.forEach((giornata, index) => {
     teams.forEach(team => {
@@ -905,44 +924,42 @@ function avviaAnimazioneClassifica(stagioneKey) {
       if (!bar || !logo) return;
 
       const scoreEl = bar.querySelector(".team_score");
-      const barSize = punteggi[team] * scaleFactor + "rem";
-      const logoOffset = (barThickness - 2) / 2;
+      const barSize = `${punteggi[team] * scaleFactor}rem`;
+      const label = `giornata${index}`;
 
       if (isDesktop) {
-        const x = i * spacingX;
+        const left = `${i * colSpacing}rem`;
 
         tl.to(bar, {
-          x: `${x}rem`,
-          y: `${desktopBarY}rem`,
+          left,
           height: barSize,
           duration: 2,
           ease: "none"
-        }, "giornata" + index);
+        }, label);
 
         tl.to(logo, {
-          x: `${x}rem`,
-          y: `${desktopLogoY}rem`,
+          left,
           autoAlpha: 1,
           duration: 2,
           ease: "none"
-        }, "giornata" + index);
-
+        }, label);
       } else {
-        const y = i * totalRowHeight;
+        const y = `${i * totalRowHeight}rem`;
+        const logoOffset = (barThickness - 2) / 2;
 
         tl.to(bar, {
-          y: `${y}rem`,
+          y,
           width: barSize,
           duration: 2,
           ease: "none"
-        }, "giornata" + index);
+        }, label);
 
         tl.to(logo, {
-          y: `${y + logoOffset}rem`,
+          y: `${i * totalRowHeight + logoOffset}rem`,
           autoAlpha: 1,
           duration: 2,
           ease: "none"
-        }, "giornata" + index);
+        }, label);
       }
 
       if (scoreEl) {
@@ -956,7 +973,7 @@ function avviaAnimazioneClassifica(stagioneKey) {
           onUpdate: function () {
             scoreEl.textContent = this.targets()[0].val.toFixed(2);
           }
-        }, "giornata" + index);
+        }, label);
       }
     });
   });
