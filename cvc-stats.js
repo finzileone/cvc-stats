@@ -850,9 +850,11 @@ function avviaAnimazioneClassifica(stagioneKey) {
   gsap.set(logos, { autoAlpha: 0, y: 0 });
 
   const screenWidth = window.innerWidth;
+  const isDesktop = screenWidth >= 992;
   let scaleFactor = screenWidth < 768 ? 0.4 : screenWidth < 992 ? 0.75 : 1.4;
   let barHeight = screenWidth < 768 ? 1.25 : screenWidth < 992 ? 1.6 : 2;
   let spacingY = screenWidth < 992 ? 0.35 : 0.25;
+  let spacingX = isDesktop ? 2.5 : 0;
   const totalRowHeight = barHeight + spacingY;
 
   bars.forEach(bar => (bar.style.height = `${barHeight}rem`));
@@ -873,13 +875,44 @@ function avviaAnimazioneClassifica(stagioneKey) {
       const logo = wrapper.querySelector(`.team_logo[data-team="${team}"]`);
       if (!bar || !logo) return;
 
-      const y = i * totalRowHeight;
       const width = punteggi[team] * scaleFactor + "rem";
-      const scoreEl = bar.querySelector(".team_score");
-      const logoOffset = (barHeight - 2) / 2;
+const scoreEl = bar.querySelector(".team_score");
+const logoOffset = (barHeight - 2) / 2;
 
-      tl.to(bar, { y: `${y}rem`, width, duration: 2, ease: "none" }, "giornata" + index);
-     tl.to(logo, { y: `${y + logoOffset}rem`, autoAlpha: 1, duration: 2, ease: "none" }, "giornata" + index);
+if (isDesktop) {
+  const x = i * spacingX;
+
+  tl.to(bar, {
+    x: `${x}rem`,
+    width,
+    duration: 2,
+    ease: "none"
+  }, "giornata" + index);
+
+  tl.to(logo, {
+    x: `${x}rem`,
+    autoAlpha: 1,
+    duration: 2,
+    ease: "none"
+  }, "giornata" + index);
+
+} else {
+  const y = i * totalRowHeight;
+
+  tl.to(bar, {
+    y: `${y}rem`,
+    width,
+    duration: 2,
+    ease: "none"
+  }, "giornata" + index);
+
+  tl.to(logo, {
+    y: `${y + logoOffset}rem`,
+    autoAlpha: 1,
+    duration: 2,
+    ease: "none"
+  }, "giornata" + index);
+}
 
 
       if (scoreEl) {
