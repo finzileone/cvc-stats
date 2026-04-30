@@ -486,7 +486,7 @@ const stagioni = {
         teamA: ["LeF", "ML"],
         teamB: ["BC", "MiF"],
         sets: ["6-3", "2-6", "5-5"]
-      }
+      },
       {
         teamA: ["MM", "FP"],
         teamB: ["LF", "MaF"],
