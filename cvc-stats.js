@@ -30,6 +30,7 @@ const stagioni = {
       { MaF: 0.25, MiF: 1.25, FP: 2.5, LB: 0.25, BC: 0.5, LuF: 2.75, ZG: 1.75, LT: 0.5, PiS: 1.75, MM: 2.75, MB: 2.5, AoB: 1.25},
       { LeF: 1.5, MiF: 1.5, LuF: 1.5, BC: 1.5, PiS: 1.75, MP: 1.25, PS: 1.25, MaF: 1.75, LB: 2.5, FP: 2.5, AoB: 0.5, ZG: 0.5},
       { LeF: 0.75, LF: 1.75, MaF: 1.25, PS: 1, LB: 1, BC: 2.25, LuF: 2, LT: 2, PiS: 1.25, MM: 0.75, MB: 2.25, AoB: 1.75}
+  
     ],
     match: [
       {
@@ -481,6 +482,16 @@ const stagioni = {
         teamB: ["PS", "LB"],
         sets: ["4-6", "6-2", "3-1"]
       },
+      {
+        teamA: ["LeF", "ML"],
+        teamB: ["BC", "MiF"],
+        sets: ["6-3", "2-6", "5-5"]
+      }
+      {
+        teamA: ["MM", "FP"],
+        teamB: ["LF", "MaF"],
+        sets: ["6-2", "7-6"]
+      }
     ]
   },
   "2025-estivo": {
