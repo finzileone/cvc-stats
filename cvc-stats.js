@@ -29,7 +29,8 @@ const stagioni = {
       { LF: 0.5, MiF: 0.25, PS: 2.75, FP: 2.75, LB: 0.5, ZG: 1.5, MP: 2.5, LeF: 1.5, LT: 0.25, PiS: 2.5, MM: 1.5, MB: 1.5},
       { MaF: 0.25, MiF: 1.25, FP: 2.5, LB: 0.25, BC: 0.5, LuF: 2.75, ZG: 1.75, LT: 0.5, PiS: 1.75, MM: 2.75, MB: 2.5, AoB: 1.25},
       { LeF: 1.5, MiF: 1.5, LuF: 1.5, BC: 1.5, PiS: 1.75, MP: 1.25, PS: 1.25, MaF: 1.75, LB: 2.5, FP: 2.5, AoB: 0.5, ZG: 0.5},
-      { LeF: 0.75, LF: 1.75, MaF: 1.25, PS: 1, LB: 1, BC: 2.25, LuF: 2, LT: 2, PiS: 1.25, MM: 0.75, MB: 2.25, AoB: 1.75}
+      { LeF: 0.75, LF: 1.75, MaF: 1.25, PS: 1, LB: 1, BC: 2.25, LuF: 2, LT: 2, PiS: 1.25, MM: 0.75, MB: 2.25, AoB: 1.75},
+      { LeF: 1.5, LF: 0.5, MaF: 0.5, MiF: 1.5, PS: 2, FP: 2.5, LB: 1, BC: 1.5, LT: 1, MM: 2.5, AoB: 2}
   
     ],
     match: [
@@ -491,6 +492,11 @@ const stagioni = {
         teamA: ["MM", "FP"],
         teamB: ["LF", "MaF"],
         sets: ["6-2", "7-6"]
+      },
+      {
+        teamA: ["AoB", "PS"],
+        teamB: ["LB", "LT"],
+        sets: ["4-6", "6-4", {score: "10-8", tiebreak: true }]
       }
     ]
   },
