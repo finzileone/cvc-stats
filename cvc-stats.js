@@ -3,7 +3,7 @@ const stagioni = {
   "2026-estate": {
     teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AoB", "MeF", "PF", "MaB", "ML", "RB", "FG", "GF"],
     giornate: [
-      { LeF: 2.75, LF: 0.25, MaF: 0.25, MiF: 0.25, PS: 0.25, FP: 0, LB: 0, BC: 0.25, CM: 0, LuF: 2.75, ZG: 1.5, MP: 0, LT: 0.25, PiS: 1.5, MM: 1.5, MB: 0, AoB: 2.75, MeF: 2.75, PF: 2.75, MaB: 2.75, ML: 0, RB: 0, FG: 1.5, GF: 0 }
+      { LeF: 2.75, LF: 0.25, MaF: 0.25, MiF: 0.25, PS: 0.25, BC: 0.25, LuF: 2.75, ZG: 1.5, LT: 0.25, PiS: 1.5, MM: 1.5, AoB: 2.75, MeF: 2.75, PF: 2.75, MaB: 2.75, FG: 1.5 }
     ],
     match: [
       {
@@ -1046,6 +1046,11 @@ const datiGiocatori = {
   "AB": { tennista: "Alessandro Belitrandi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
   "LeF": { tennista: "Leone Finzi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
   "AoB": { tennista: "Antonio Bergamasco", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "PF": { tennista: "Pier Silvio Forziano", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MaB": { tennista: "Massimo Bergamasco", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "RB": { tennista: "Ruggero Bottazzi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "FG": { tennista: "Filippo Groppi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+
   // Aggiungi tutti gli altri...
 };
 
