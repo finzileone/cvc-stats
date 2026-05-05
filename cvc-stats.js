@@ -5,7 +5,14 @@ const stagioni = {
     giornate: [
       { LeF: 2.75, LF: 0.25, MaF: 0.25, MiF: 0.25, PS: 0.25, FP: 0, LB: 0, BC: 0.25, CM: 0, LuF: 2.75, ZG: 1.5, MP: 0, LT: 0.25, PiS: 1.5, MM: 1.5, MB: 0, AoB: 2.75, MeF: 2.75, PF: 2.75, MaB: 2.75, ML: 0, RB: 0, FG: 1.5, GF: 0 }
     ],
-    
+    match: [
+      {
+        teamA: ["MeF", "LeF"],
+        teamB: ["BC", "LT"],
+        sets: ["6-2", "6-1", "6-2"]
+      }
+
+    ]
 
   },
   "2025-invernale": {
