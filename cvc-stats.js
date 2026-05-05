@@ -1,5 +1,13 @@
 // === CONFIGURAZIONE STAGIONE ===
 const stagioni = {
+  "2026-estate": {
+    teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AoB", "MeF", "PF", "MaB", "ML", "RB", "FG", "GF"],
+    giornate: [
+      { LeF: 2.75, LF: 0.25, MaF: 0.25, MiF: 0.25, PS: 0.25, FP: 0, LB: 0, BC: 0.25, CM: 0, LuF: 2.75, ZG: 1.5, MP: 0, LT: 0.25, PiS: 1.5, MM: 1.5, MB: 0, AoB: 2.75, MeF: 2.75, PF: 2.75, MaB: 2.75, ML: 0, RB: 0, FG: 1.5, GF: 0 }
+    ],
+    
+
+  },
   "2025-invernale": {
     teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AB", "AoB"],
     giornate: [
