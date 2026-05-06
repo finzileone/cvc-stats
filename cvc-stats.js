@@ -290,7 +290,7 @@ const stagioni = {
       },
       {
         teamA: ["PiS", "LuF"],
-        teamB: ["AB", "ML"],
+        teamB: ["AB", "TBE"],
         sets: ["6-1", "6-3", "6-2"]
       },
       {
