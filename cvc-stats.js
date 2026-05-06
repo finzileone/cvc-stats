@@ -117,7 +117,7 @@ const stagioni = {
       },
       {
         teamA: ["ZG", "MB"],
-        teamB: ["ML", "PiS"],
+        teamB: ["TBE", "PiS"],
         sets: ["7-5", "6-2", "2-2"]
       },
       {
@@ -378,7 +378,7 @@ const stagioni = {
         sets: ["6-4", "6-6"]
       },
       {
-        teamA: ["LF", "ML"],
+        teamA: ["LF", "TBE"],
         teamB: ["LeF", "ZG"],
         sets: ["6-4", "6-3"]
       },
@@ -499,7 +499,7 @@ const stagioni = {
         sets: ["4-6", "6-2", "3-1"]
       },
       {
-        teamA: ["LeF", "ML"],
+        teamA: ["LeF", "TBE"],
         teamB: ["BC", "MiF"],
         sets: ["6-3", "2-6", "5-5"]
       },
@@ -690,7 +690,7 @@ const stagioni = {
         sets: ["7-6", "6-2", "4-2"]
       },
       {
-        teamA: ["PiS", "ML"],
+        teamA: ["PiS", "TBE"],
         teamB: ["PS", "LF"],
         sets: ["5-7", "6-2"]
       },
@@ -761,7 +761,7 @@ const stagioni = {
       },
       {
         teamA: ["MiF", "LuF"],
-        teamB: ["PS", "ML"],
+        teamB: ["PS", "TBE"],
         sets: ["6-3", "6-3", "3-3"]
       },
       {
@@ -771,7 +771,7 @@ const stagioni = {
       },
       {
         teamA: ["LB", "PS"],
-        teamB: ["MaF", "ML"],
+        teamB: ["MaF", "TBE"],
         sets: ["7-6", "6-2", "2-0"]
       },
       {
