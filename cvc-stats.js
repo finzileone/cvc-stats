@@ -10,6 +10,16 @@ const stagioni = {
         teamA: ["MeF", "LeF"],
         teamB: ["BC", "LT"],
         sets: ["6-2", "6-1", "6-2"]
+      },
+      {
+        teamA: ["LuF", "PF"],
+        teamB: ["MaF", "PS"],
+        sets: ["6-0", "6-0", "6-1"]
+      },
+      {
+        teamA: ["MaB", "AoB"],
+        teamB: ["MiF", "LF"],
+        sets: ["6-1", "6-1", "6-3"]
       }
 
     ]
