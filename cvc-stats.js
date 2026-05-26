@@ -1289,7 +1289,55 @@ if (ritiro === "A" || ritiro === "B") {
 
   return stats;
 }
+function mostraStatisticheGiocatore() {
+  const playerPage = document.querySelector(".player-page");
+  if (!playerPage) return;
 
+  const playerKey = playerPage.dataset.player;
+  if (!playerKey) return;
+
+  const stats = calcolaStatisticheGlobali();
+  const s = stats[playerKey];
+  const info = datiGiocatori[playerKey] || {};
+
+  if (!s) return;
+
+  const setText = (selector, value) => {
+    const el = playerPage.querySelector(selector);
+    if (el) el.textContent = value;
+  };
+
+  const percentualeVittorie = s.matchTotali > 0
+    ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
+    : "-";
+
+  const mediaPunti = s.matchTotali > 0
+    ? (s.puntiTotali / s.matchTotali).toFixed(2)
+    : "0.00";
+
+  setText(".player-name", info.tennista || playerKey);
+  setText(".player-trofei", info.trofei ?? 0);
+  setText(".player-oro", info.oro ?? 0);
+  setText(".player-argento", info.argento ?? 0);
+  setText(".player-bronzo", info.bronzo ?? 0);
+
+  setText(".player-tornei", s.torneiGiocati);
+  setText(".player-match", s.matchTotali);
+  setText(".player-vinte", s.matchVinti);
+  setText(".player-perse", s.matchPersi);
+  setText(".player-pari", s.matchPari);
+  setText(".player-percentuale", percentualeVittorie);
+
+  setText(".player-singoli-vinti", s.singoliVinti ?? 0);
+  setText(".player-singoli-persi", s.singoliPersi ?? 0);
+
+  setText(".player-set-vinti", s.setVinti);
+  setText(".player-set-persi", s.setPersi);
+  setText(".player-game-vinti", s.gameVinti);
+  setText(".player-game-persi", s.gamePersi);
+  setText(".player-punti", s.puntiTotali.toFixed(2));
+  setText(".player-media", mediaPunti);
+}
 
 function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
@@ -1379,6 +1427,7 @@ function mostraStatisticheAllTime() {
 // === AVVIO AUTOMATICO ===
 window.addEventListener("load", function () {
   mostraStatisticheAllTime();
+  mostraStatisticheGiocatore();
 
   document.querySelectorAll(".start-animation-btn").forEach(btn => {
     btn.addEventListener("click", () => {
