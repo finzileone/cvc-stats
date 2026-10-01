@@ -19,8 +19,8 @@ const stagioni = {
       { LF: 2, MaF: 1.5, MiF: 1.5, PS: 2.25, LB: 2.25, CM: 0.75, MM: 0.75, MaB: 1.5, AoB: 2, ML: 1.5, GF: 1, MeF: 1, FG: 0.9, PF: 2.1 },
       { MiF: 2.75, PS: 0.25, LB: 1.5, BC: 0.25, CM: 0.25, LuF: 0.25, ZG: 0.25, MP: 2.75, LeF: 0.25, PiS: 1.5, MaB: 2.75, AoB: 2.75, ML: 2.75, MeF: 2.75, FG: 1.5, PF: 1.5},
       { LF: 1.25, MaF: 2, MiF: 1.5, PS: 1.5, BC: 1.5, LuF: 1, ZG: 1, MP: 1, LeF: 1.5, LT: 1.75, PiS: 1.25, MM: 1, MB: 2, MaB: 1.75, AoB: 2, FG: 2 },
-      { LF: 0.25, MiF: 0.25, LB: 2.75, BC: 2, ZG: 1.6, MP: 2.4, LeF: 2.75, LT: 0.8, PiS: 2.75, MM: 0.25, MaB: 1, AoB: 1, ML: 0.25, MeF: 2, FG: 2.75 },
-      { MaF: 2.75, MiF: 1.2, LB: 2.75, BC: 1.8, LuF: 1.8, ZG: 1.5, LeF: 0.25, LT: 1.2, PiS: 1.8, MaB: 1.5, ML: 1.2, MeF: 1.5, FG: 0.25 }
+      { MaF: 0.25, MiF: 0.25, LB: 2.75, BC: 2, ZG: 1.6, MP: 2.4, LeF: 2.75, LT: 0.8, PiS: 2.75, MM: 0.25, MaB: 1, AoB: 1, ML: 0.25, MeF: 2, FG: 2.75 },
+      { LF: 1.5, MaF: 2.75, MiF: 1.2, LB: 2.75, BC: 1.8, LuF: 1.8, ZG: 1.5, LeF: 0.25, LT: 1.2, PiS: 1.8, MaB: 1.5, ML: 1.2, MeF: 1.5, FG: 0.25 }
 
 
 
