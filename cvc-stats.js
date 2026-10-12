@@ -27,7 +27,7 @@ const stagioni = {
         sets: ["1-6", "6-2", "5-3"]
       }
     ]
-  }
+  },
   "2026-estate": {
     teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AoB", "MeF", "PF", "MaB", "ML", "RB", "FG", "GF"],
     giornate: [
