@@ -1,5 +1,33 @@
 // === CONFIGURAZIONE STAGIONE ===
 const stagioni = {
+  "2026-inverno": {
+    teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AoB", "MeF", "PF", "MaB", "RB", "FG", "AB"],
+    giornate: [
+      { LF: 2, MaF: 1, PS: 2, LB: 1, BC: 2, LuF: 0.75, ZG: 1, MP: 2.25, LeF: 0.5, PiS: 2.5, MM: 1, MB: 0.5, AoB: 2, AB: 2.5, MeF: 0.75, PF: 2.25 }
+    ],
+    match: [
+      {
+        teamA: ["PF", "MP"],
+        teamB: ["MeF", "LuF"],
+        sets: ["6-3", "6-4", "0-6"]
+      },
+      {
+        teamA: ["PiS", "AB"],
+        teamB: ["LeF", "MB"],
+        sets: ["6-2", "6-4", "6-6"]
+      },
+      {
+        teamA: ["LF", "AoB"],
+        teamB: ["LB", "ZG"],
+        sets: ["6-4", "3-6", "3-1"]
+      },
+      {
+        teamA: ["BC", "PS"],
+        teamB: ["MaF", "MM"],
+        sets: ["1-6", "6-2", "5-3"]
+      }
+    ]
+  }
   "2026-estate": {
     teams: ["LeF", "LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "ZG", "MP", "LT", "PiS", "MM", "MB", "AoB", "MeF", "PF", "MaB", "ML", "RB", "FG", "GF"],
     giornate: [
