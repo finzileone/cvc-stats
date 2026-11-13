@@ -1842,6 +1842,35 @@ function mostraStatisticheGiocatore() {
   setText(".player-media", mediaPunti);
 }
 
+
+function mostraAnteprimeGiocatori() {
+  const cards = document.querySelectorAll(".card-giocatore[data-player]");
+  if (!cards.length) return;
+
+  const stats = calcolaStatisticheGlobali();
+
+  cards.forEach(card => {
+    const playerKey = card.dataset.player;
+    const s = stats[playerKey];
+
+    if (!s) return;
+
+    const setText = (selector, value) => {
+      const el = card.querySelector(selector);
+      if (el) el.textContent = value;
+    };
+
+    const percentualeVittorie = s.matchTotali > 0
+      ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
+      : "-";
+
+    setText(".player-percentuale", percentualeVittorie);
+    setText(".player-tornei", s.torneiGiocati);
+  });
+}
+
+
+
 function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
   const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
