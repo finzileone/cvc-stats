@@ -1960,6 +1960,7 @@ function mostraStatisticheAllTime() {
 window.addEventListener("load", function () {
   mostraStatisticheAllTime();
   mostraStatisticheGiocatore();
+  mostraAnteprimeGiocatori();
 
   document.querySelectorAll(".start-animation-btn").forEach(btn => {
     btn.addEventListener("click", () => {
