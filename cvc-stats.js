@@ -1635,14 +1635,14 @@ function avviaAnimazioneClassifica(stagioneKey) {
   });
 }
 const datiGiocatori = {
-  "MiF": { tennista: "Michele Fornari", trofei: 2, oro: 0, argento: 0, bronzo: 2 },
+  "MiF": { tennista: "Michele Fornari", trofei: 2, oro: 0, argento: 0, bronzo: 2, matchVinti: 12, matchPersi: 35, matchPari: 3, singoliVinti: 1, singoliPersi: 14 },
   "LT": { tennista: "Luca Travaglio", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "FP": { tennista: "Filippo Pedroli", trofei: 23, oro: 8, argento: 9, bronzo: 6 },
-  "LF": { tennista: "Luca Finzi", trofei: 21, oro: 7, argento: 7, bronzo: 7 },
-  "MaF": { tennista: "Mario Fornari", trofei: 8, oro: 0, argento: 3, bronzo: 5 },
+  "FP": { tennista: "Filippo Pedroli", trofei: 23, oro: 8, argento: 9, bronzo: 6, matchVinti: 20, matchPersi: 21, matchPari: 3, singoliVinti: 8, singoliPersi: 5 },
+  "LF": { tennista: "Luca Finzi", trofei: 21, oro: 7, argento: 7, bronzo: 7, matchVinti: 26, matchPersi: 15, matchPari: 4, singoliVinti: 15, singoliPersi: 9 },
+  "MaF": { tennista: "Mario Fornari", trofei: 8, oro: 0, argento: 3, bronzo: 5, matchVinti: 22, matchPersi: 25, matchPari: 2, singoliVinti: 2, singoliPersi: 10 },
   "LB": { tennista: "Luca Belitrandi", trofei: 15, oro: 9, argento: 3, bronzo: 3 },
-  "ML": { tennista: "Marco Levi", trofei: 14, oro: 7, argento: 6, bronzo: 1 },
-  "PS": { tennista: "Paolo Semenza", trofei: 8, oro: 0, argento: 1, bronzo: 7 },
+  "ML": { tennista: "Marco Levi", trofei: 14, oro: 7, argento: 6, bronzo: 1, matchVinti: 29, matchPersi: 13, matchPari: 3, singoliVinti: 14, singoliPersi: 2 },
+  "PS": { tennista: "Paolo Semenza", trofei: 8, oro: 0, argento: 1, bronzo: 7, matchVinti: 15, matchPersi: 14, matchPari: 5, singoliVinti: 4, singoliPersi: 4 },
   "BC": { tennista: "Beppe Colli", trofei: 4, oro: 0, argento: 1, bronzo: 3 },
   "LuF": { tennista: "Luca Fornari", trofei: 7, oro: 4, argento: 3, bronzo: 0 },
   "MP": { tennista: "Martino Prati", trofei: 1, oro: 0, argento: 1, bronzo: 0 },
