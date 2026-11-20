@@ -1507,7 +1507,7 @@ const stagioni = {
     { MaF: 1, MiF: 2, FP: 1, ML: 2 },
     { LF: 2.5, MaF: 0.5, MiF: 2.5, FP: 0.5 }
   ]
-}
+  }
 
 };
 
@@ -1709,7 +1709,7 @@ function calcolaStatisticheGlobali() {
   const torneiGiocati = {};
 
   Object.entries(stagioni).forEach(([stagioneKey, stagione]) => {
-    const { teams, match, giornate } = stagione;
+    const { teams, match = [], giornate } = stagione;
 
     // Inizializzazione giocatori
     teams.forEach(p => {
