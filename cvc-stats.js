@@ -7,7 +7,9 @@ const stagioni = {
       { LF: 0.25, MaF: 0.25, MiF: 0.25, FP: 2.75, LB: 2.75, LuF: 2.75, MP: 2.75, LT: 0.25, MM: 2.75, MB: 0.25, MaB: 2.75, AoB: 0.25, AB: 0.25, MeF: 2.75, FG: 0.25, PF: 2.75 },
       { LF: 0.25, MiF: 0.25, FP: 0.5, LB: 2.75, BC: 2.75, LuF: 0.25, ZG: 0.25, MP: 0.25, LeF: 2.75, LT: 2.5, PiS: 2.75, MM: 0.25, MaB: 2.75, AB: 0.5, MeF: 2.75, PF: 2.5 },
       { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1, LB: 0.25, BC: 2.75, LuF: 2, ZG: 0.25, LeF: 1, LT: 2, MB: 2.75, AoB: 1.5, MeF: 0.25, FG: 2.75, RB: 0.25, PF: 2.75 },
-      { LF: 0.75, MaF: 1.5, MiF: 2.75, PS: 2.25, BC: 0.25, ZG: 1.5, MP: 1.5, LeF: 2.75, LT: 0.25, PiS: 1.5, MB: 0.75, MaB: 2.75, AoB: 2.25, AB: 2.75, FG: 0.25, RB: 0.25 }
+      { LF: 0.75, MaF: 1.5, MiF: 2.75, PS: 2.25, BC: 0.25, ZG: 1.5, MP: 1.5, LeF: 2.75, LT: 0.25, PiS: 1.5, MB: 0.75, MaB: 2.75, AoB: 2.25, AB: 2.75, FG: 0.25, RB: 0.25 },
+      { MaF: 1.25, MiF: 2, PS: 2.25, FP: 0.5, LB: 1.75, LuF: 2.5, MP: 1.25, LeF: 0.5, PiS: 2.5, MaB: 0.75, AoB: 2, AB: 0.75, MeF: 1, FG: 1.75, RB: 1, PF: 2.25 },
+      { LF: 2.75, MiF: 2, PS: 0.25, LB: 0.25, BC: 0.25, LuF: 2.75, ZG: 0.25, MP: 1, LT: 2.75, PiS: 2, MaB: 2.75, AB: 0.25, MeF: 2.75, FG: 0.25, RB: 1, PF: 2.75 }
     ],
     match: [
       {
@@ -109,6 +111,46 @@ const stagioni = {
         teamA: ["AoB", "PS"],
         teamB: ["MB", "LF"],
         sets: ["6-2", "6-3", "0-3"]
+      },
+      {
+        teamA: ["AoB", "MiF"],
+        teamB: ["RB", "MeF"],
+        sets: ["2-6", "6-2", "6-3"]
+      },
+      {
+        teamA: ["LuF", "PiS"],
+        teamB: ["FP", "LeF"],
+        sets: ["6-2", "6-3", "2-2"]
+      },
+      {
+        teamA: ["PF", "PS"],
+        teamB: ["MaB", "AB"],
+        sets: ["7-6", "4-4"]
+      },
+      {
+        teamA: ["LB", "FG"],
+        teamB: ["MP", "MaF"],
+        sets: ["7-6", "3-5"]
+      },
+      {
+        teamA: ["LuF", "LT"],
+        teamB: ["PS", "AB"],
+        sets: ["7-6", "6-3", "2-1"]
+      },
+      {
+        teamA: ["PF", "LF"],
+        teamB: ["BC", "ZG"],
+        sets: ["6-2", "6-0", "6-0"]
+      },
+      {
+        teamA: ["MiF", "PiS"],
+        teamB: ["MP", "RB"],
+        sets: ["6-3", "4-6", "3-0"]
+      },
+      {
+        teamA: ["MaB", "MeF"],
+        teamB: ["LB", "FG"],
+        sets: ["6-1", "6-2", "6-1"]
       }
     ]
   },
