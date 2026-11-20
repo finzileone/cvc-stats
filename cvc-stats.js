@@ -1677,23 +1677,28 @@ function calcolaStatisticheGlobali() {
 
     // Inizializzazione giocatori
     teams.forEach(p => {
-      if (!stats[p]) {
-        stats[p] = {
-          matchVinti: 0,
-          matchPersi: 0,
-          matchPari: 0,
-          singoliVinti: 0,
-          singoliPersi: 0,
-          setVinti: 0,
-          setPersi: 0,
-          gameVinti: 0,
-          gamePersi: 0,
-          matchTotali: 0,
-          puntiTotali: 0,
-          torneiGiocati: 0
-        };
-        torneiGiocati[p] = new Set();
-      }
+     
+if (!stats[p]) {
+  const info = datiGiocatori[p] || {};
+
+  stats[p] = {
+    matchVinti: info.matchVinti ?? 0,
+    matchPersi: info.matchPersi ?? 0,
+    matchPari: info.matchPari ?? 0,
+    singoliVinti: info.singoliVinti ?? 0,
+    singoliPersi: info.singoliPersi ?? 0,
+    setVinti: info.setVinti ?? 0,
+    setPersi: info.setPersi ?? 0,
+    gameVinti: info.gameVinti ?? 0,
+    gamePersi: info.gamePersi ?? 0,
+    matchTotali: 0,
+    puntiTotali: 0,
+    torneiGiocati: 0
+  };
+
+  torneiGiocati[p] = new Set();
+}
+
       torneiGiocati[p].add(stagioneKey);
     });
 
