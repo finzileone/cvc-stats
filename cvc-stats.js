@@ -1507,7 +1507,31 @@ const stagioni = {
     { MaF: 1, MiF: 2, FP: 1, ML: 2 },
     { LF: 2.5, MaF: 0.5, MiF: 2.5, FP: 0.5 }
   ]
-  }
+  },
+  "2009-estate": {
+  teams: ["LF", "ML", "FP", "MaF", "MiF", "PS"],
+  giornate: [
+    { LF: 2, MaF: 2, MiF: 1, FP: 1 },
+    { FP: 1, ML: 3 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, ML: 2.5 },
+    { MaF: 2.5, MiF: 0.5, ML: 2.5 },
+    { LF: 2.5, MaF: 2.5, MiF: 0.5, ML: 0.5 },
+    { LF: 2.5, MiF: 0.5, FP: 0.5 },
+    { LF: 3, MiF: 1, FP: 2 },
+    { MaF: 2.5, MiF: 0.5, ML: 2.5 },
+    { LF: 0.5, MaF: 2.5, MiF: 0.5, FP: 2.5 },
+    { LF: 2.5, MaF: 0.5, FP: 2.5, ML: 0.5 },
+    { MaF: 0.5, MiF: 0.5, ML: 2.5 },
+    { LF: 1, MaF: 2, MiF: 1, ML: 2 },
+    { LF: 2.5, MiF: 0.5, FP: 2.5, ML: 0.5 },
+    { MaF: 1, FP: 3 },
+    { LF: 0.5, MaF: 2.5, MiF: 0.5, ML: 2.5 },
+    { LF: 0.5, MiF: 0.5, FP: 2.5, ML: 2.5 },
+    { PS: 1, FP: 3 },
+    { LF: 2.5, MaF: 0.5, FP: 0.5, ML: 2.5 },
+    { LF: 2.5, MiF: 0.5, FP: 2.5, ML: 0.5 }
+  ]
+}
 
 };
 
