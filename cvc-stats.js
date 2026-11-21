@@ -1846,12 +1846,18 @@ if (!stats[p]) {
               if (a > b) setStats[keyA]++;
               else if (b > a) setStats[keyB]++;
             }
-          } else {
-            if ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) {
-              if (a > b) setStats[keyA]++;
-              else if (b > a) setStats[keyB]++;
-            }
-          }
+          
+} else {
+  if (
+    ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) ||
+    (a === 7 && b === 6) ||
+    (a === 6 && b === 7)
+  ) {
+    if (a > b) setStats[keyA]++;
+    else if (b > a) setStats[keyB]++;
+  }
+}
+
         } else {
           // tie-break → solo set
           if (a > b) setStats[keyA]++;
