@@ -1892,14 +1892,23 @@ if (ritiro === "A" || ritiro === "B") {
     const lastScore = typeof lastSet === "object" ? lastSet.score : lastSet;
     const [a, b] = lastScore.split("-").map(Number);
 
-    if (a > b) {
-      winner = teamA;
-    } else if (b > a) {
-      winner = teamB;
-    } else if (!isSingolo) {
-      isDraw = true;
-    }
-  }
+   
+const ultimoSetConcluso =
+  ((a >= 6 || b >= 6) && Math.abs(a - b) >= 2) ||
+  (a === 7 && b === 6) ||
+  (a === 6 && b === 7);
+
+if (ultimoSetConcluso) {
+  isDraw = true;
+} else if (a > b) {
+  winner = teamA;
+} else if (b > a) {
+  winner = teamB;
+} else if (!isSingolo) {
+  isDraw = true;
+}
+}
+
 }
 
       // === SET E GAME (sempre globali)
