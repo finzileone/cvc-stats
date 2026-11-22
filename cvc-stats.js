@@ -1590,6 +1590,253 @@ const stagioni = {
     { MaF: 2, MiF: 1, FP: 2, ML: 1 }
   ]
 },
+"2011-inverno": {
+  teams: ["LF", "ML", "FP", "MaF", "MiF", "PS"],
+
+  giornate: [
+    { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1.5 },
+    { LF: 2, MaF: 2, MiF: 1, ML: 1 },
+    { MaF: 2.5, MiF: 0.5, PS: 2.5, ML: 0.5 },
+    { MiF: 1, PS: 2, ML: 3 },
+    { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1.5 },
+    { LF: 1, MiF: 1, FP: 2, ML: 2 },
+    { LF: 2, MiF: 1, PS: 1, FP: 2 },
+    { MiF: 1, PS: 2, FP: 3 },
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, PS: 1.5 },
+    { LF: 3, MiF: 1 },
+    { MaF: 1, PS: 2, FP: 2, ML: 1 },
+    { LF: 1, MaF: 2, FP: 1, ML: 2 },
+    { LF: 0.5, MiF: 0.5, PS: 2.5, FP: 2.5 },
+    { MiF: 0.5, PS: 0.5, FP: 2.5, ML: 2.5 },
+    { LF: 0.5, MaF: 2.5, PS: 0.5, FP: 2.5 },
+    { LF: 2.5, MiF: 0.5, PS: 0.5, ML: 2.5 },
+    { MaF: 2.5, MiF: 0.5, FP: 0.5, ML: 2.5 },
+    { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1.5 },
+    { MaF: 0.5, FP: 2.5, ML: 2.5 },
+    { LF: 2, MaF: 2.5, FP: 1.5 },
+    { LF: 0.5, MiF: 0.5, PS: 2.5, ML: 2.5 },
+    { MaF: 2, MiF: 1, PS: 1, ML: 2 },
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, FP: 1.5 },
+    { MaF: 0.5, MiF: 0.5, PS: 2.5, ML: 2.5 },
+    { LF: 1.5, PS: 1.5, FP: 1.5, ML: 1.5 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, FP: 2.5 },
+    { LF: 2.5, MaF: 0.5, PS: 0.5, ML: 2.5 },
+    { MaF: 2, MiF: 1, FP: 2, ML: 1 },
+    { LF: 2.5, MiF: 0.5, FP: 2.5, ML: 0.5 }
+  ],
+
+  match: [
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["FP", "PS"],
+      sets: ["6-2", "1-6", "2-2"]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "ML"],
+      sets: ["1-6", "6-0", "5-4"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["MiF", "ML"],
+      sets: ["7-5", "6-4"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-5"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-1"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["4-5"]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["FP", "PS"],
+      sets: ["6-7", "6-0"]
+    },
+    {
+      teamA: ["MiF", "LF"],
+      teamB: ["FP", "ML"],
+      sets: ["6-3", "2-6", "6-4"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["PS", "MiF"],
+      sets: ["4-6", "6-4", "2-0"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-4"]
+    },
+    {
+      teamA: ["PS"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-1"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["4-0"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-4", "4-5"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-4", "5-4"]
+    },
+    {
+      teamA: ["MaF", "ML"],
+      teamB: ["FP", "PS"],
+      sets: ["5-7", "7-5", "1-2"]
+    },
+    {
+      teamA: ["MaF", "ML"],
+      teamB: ["FP", "LF"],
+      sets: ["6-1", "4-6", "2-1"]
+    },
+
+    // 27 dicembre 2010: incontri senza punti in classifica
+    {
+      teamA: ["ML"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["6-4"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-4"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-0"]
+    },
+
+    {
+      teamA: ["FP", "PS"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-4", "6-2"]
+    },
+    {
+      teamA: ["ML", "FP"],
+      teamB: ["MiF", "PS"],
+      sets: ["6-4", "6-2"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "PS"],
+      sets: ["6-4", "6-3"]
+    },
+    {
+      teamA: ["LF", "ML"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-4", "6-2"]
+    },
+    {
+      teamA: ["MaF", "ML"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-2", "6-3"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["FP", "LF"],
+      sets: ["7-6", "2-5"]
+    },
+    {
+      teamA: ["ML", "FP"],
+      teamB: ["MaF", "X"],
+      sets: ["6-1", "6-2"]
+    },
+
+    // Triangolare LF / FP / MaF
+    {
+      teamA: ["LF"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-3"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-6"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-5"]
+    },
+
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-3", "6-2"]
+    },
+    {
+      teamA: ["MaF", "ML"],
+      teamB: ["MiF", "PS"],
+      sets: ["6-4", "3-6", "6-2"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["MiF", "LF"],
+      sets: ["7-5", "6-7"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-2", "6-1"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "FP"],
+      sets: ["6-7", "6-5"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-2", "6-1"]
+    },
+    {
+      teamA: ["LF", "ML"],
+      teamB: ["PS", "MaF"],
+      sets: ["6-2", "6-2"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["MiF", "ML"],
+      sets: ["6-3", "6-2"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MiF", "ML"],
+      sets: ["6-3", "6-2"]
+    }
+  ]
+},
 
 
 };
