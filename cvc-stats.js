@@ -4263,7 +4263,7 @@ const stagioni = {
   ]
 },
 "2017-estate": {
-  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB"],
+  teams: ["LF", "MaF", "MiF", "FP", "LB"],
 
   giornate: [
     { LF: 2.75, MaF: 0.25, MiF: 0.25, LB: 2.75 },
