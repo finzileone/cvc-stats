@@ -3811,7 +3811,8 @@ const stagioni = {
     { MaF: 0.25, MiF: 0.25, PS: 2.75, FP: 2.75 },
     { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1.5 },
     { MaF: 0.25, MiF: 2.75, PS: 0.25, ML: 2.75 },
-    { LF: 2, MaF: 1, FP: 3 }
+    { LF: 2, MaF: 1, FP: 3 },
+    { LF: 2, MiF: 2, PS: 1, ML: 1 }
   ],
 
   match: [
@@ -3994,6 +3995,11 @@ const stagioni = {
       teamB: ["LF"],
       tipo: "singolo",
       sets: ["5-4"]
+    },
+    {
+      teamA: ["LF", "MiF"],
+      teamB: ["PS", "ML"],
+      sets: ["6-3", "4-6", "3-1"]
     }
   ]
 },
