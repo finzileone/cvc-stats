@@ -4003,6 +4003,443 @@ const stagioni = {
     }
   ]
 },
+"2017-inverno": {
+  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB"],
+
+  giornate: [
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, PS: 2.5 },
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, FP: 2.75 },
+    { MaF: 2.5, MiF: 0.5, PS: 0.5, FP: 2.5 },
+    { LF: 2, MaF: 1, FP: 3 },
+    { LF: 2 },
+    { LF: 1, MaF: 2, PS: 1, FP: 2 },
+    { LF: 2.5, MaF: 2.5, MiF: 0.5, FP: 0.5 },
+    { MaF: 1.5, FP: 2.5 },
+    { LF: 1, MiF: 2, PS: 1, FP: 2 },
+    { LF: 2, MaF: 1, MiF: 2, PS: 1 },
+    { MaF: 2.5, PS: 2.5, FP: 0.5, LB: 0.5 },
+    { MaF: 3.25, MiF: 0.75 },
+    { LF: 2, MiF: 1, PS: 1, LB: 2 },
+    { LF: 2, MaF: 1, PS: 1, LB: 2 },
+    { LF: 1, MaF: 2, MiF: 2, LB: 1 },
+    { LF: 1.25, MaF: 1.25, FP: 3.5 },
+    { LF: 0.75, MaF: 2.25, MiF: 0.75, FP: 2.25 },
+    { LF: 2, MaF: 1, MiF: 1, FP: 2 },
+    { LF: 0.25, MaF: 2.75, MiF: 0.25, FP: 2.75 },
+    { LF: 2, MiF: 1, FP: 3 },
+    { LF: 2.75, MaF: 1.25 },
+    { LF: 1, MaF: 2, PS: 1, FP: 2 },
+    { LF: 2.25, MaF: 2.25, MiF: 0.75, FP: 0.75 },
+    { LF: 0.5, MaF: 2, FP: 3.5 },
+    { LF: 2.25, MaF: 2.25, MiF: 0.75, FP: 0.75 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, FP: 2.5 },
+    { LF: 1.75, MiF: 0.75, LB: 3.5 }
+  ],
+
+  match: [
+    {
+      teamA: ["LF", "PS"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-2", "6-2", "5-5"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-3", "6-1", "6-1"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-1", "7-5"]
+    },
+
+    // Giornata 4: triangolare LF / MaF / FP.
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-3"]
+    },
+
+    // Giornata 5: LF riceve 2 punti, nessun risultato registrato.
+
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["PS", "LF"],
+      sets: ["4-6", "6-2", "6-0"]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-4", "6-4", "3-3"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["2-6", "6-0", "6-4"]
+    },
+    {
+      teamA: ["MiF", "FP"],
+      teamB: ["LF", "PS"],
+      sets: ["6-2", "1-6", "4-2"]
+    },
+    {
+      teamA: ["MiF", "LF"],
+      teamB: ["MaF", "PS"],
+      sets: ["6-1", "5-7", "3-1"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["FP", "LB"],
+      sets: ["7-5", "6-4"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-2", "6-4", "3-1"]
+    },
+
+    // Giornate 13 e 14: nessun incontro.
+
+    // Giornata 15: il file riporta "7-5 T.B.".
+    {
+      teamA: ["LF", "LB"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-1", "5-7", "7-5"]
+    },
+    {
+      teamA: ["LF", "LB"],
+      teamB: ["PS", "MaF"],
+      sets: ["6-4", "4-4"]
+    },
+
+    // Giornata 17: ritiro della coppia LF-LB.
+    {
+      teamA: ["MaF", "MiF"],
+      teamB: ["LF", "LB"],
+      sets: ["4-6"],
+      ritiro: "B"
+    },
+
+    // Giornata 18: triangolare FP / MaF / LF.
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["3-1"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["0-0"]
+    },
+
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "MiF"],
+      sets: ["6-2", "6-4", "1-6"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-0", "4-6", "6-1"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "MiF"],
+      sets: ["6-4", "6-1", "4-3"]
+    },
+
+    // Giornata 22: triangolare FP / MiF / LF.
+    {
+      teamA: ["FP"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["3-1"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["6-3", "5-5"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "PS"],
+      sets: ["3-6", "6-2", "3-0"]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-4", "6-3", "1-3"]
+    },
+
+    // Giornata 26: triangolare FP / MaF / LF.
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-2", "6-2", "3-4"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-2", "6-2", "3-3"]
+    },
+
+    // Giornata 29: nessun incontro.
+
+    // Giornata 30: triangolare LB / MiF / LF.
+    {
+      teamA: ["LB"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["LB"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    }
+  ]
+},
+"2017-estate": {
+  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB"],
+
+  giornate: [
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, LB: 2.75 },
+    { LF: 2.75, MiF: 0.25, FP: 2.75, LB: 0.25 },
+    { MaF: 2, MiF: 1, FP: 1, LB: 2 },
+    { LF: 2, MaF: 1, MiF: 2, LB: 1 },
+    { LF: 2, MaF: 2, MiF: 1, FP: 1 },
+    { LF: 1.75, MaF: 0.75, FP: 3.5 },
+    { LF: 0.5, FP: 3.5 },
+    { LF: 2, MiF: 1, FP: 3 },
+    { MaF: 1.5, MiF: 1.5, FP: 1.5, LB: 1.5 },
+    { LF: 1, MaF: 2, MiF: 1, LB: 2 },
+    { LF: 3, MaF: 2, MiF: 1 },
+    { LF: 1, MaF: 2, FP: 2, LB: 1 },
+    { LF: 0.5, MaF: 2.5, FP: 2.5, LB: 0.5 },
+    { LF: 2.5, MiF: 0.5, LB: 2.5 },
+    { LF: 1, MaF: 2, MiF: 1, LB: 2 },
+    { LF: 1, MaF: 2, FP: 2, LB: 1 },
+    { MaF: 0.25, MiF: 2.75, FP: 2.75, LB: 0.25 },
+    { LF: 2, MaF: 2, MiF: 1, FP: 1 },
+    { LF: 1, FP: 3 }
+  ],
+
+  match: [
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-2", "6-1", "4-3"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["LB", "MiF"],
+      sets: ["6-0", "6-1", "6-1"]
+    },
+    {
+      teamA: ["MaF", "LB"],
+      teamB: ["MiF", "FP"],
+      sets: ["3-6", "7-5", { score: "8-6", tiebreak: true }]
+    },
+    {
+      teamA: ["MiF", "LF"],
+      teamB: ["MaF", "LB"],
+      sets: ["3-6", "6-3", { score: "10-8", tiebreak: true }]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-3", "1-6", { score: "10-8", tiebreak: true }]
+    },
+
+    // Giornata 6: triangolare FP / MaF / LF.
+    {
+      teamA: ["FP"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-3"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["6-0", "7-5", "3-2"]
+    },
+
+    // Giornata 8: triangolare FP / MiF / LF.
+    {
+      teamA: ["FP"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-3"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+
+    {
+      teamA: ["MiF", "FP"],
+      teamB: ["MaF", "LB"],
+      sets: ["6-4", "3-4"]
+    },
+    {
+      teamA: ["MaF", "LB"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-1", "4-6", { score: "11-9", tiebreak: true }]
+    },
+
+    // Giornata 11: triangolare MaF / MiF / LF.
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-4"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-3"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["4-2"]
+    },
+
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "LB"],
+      sets: ["6-3", "3-6", { score: "10-8", tiebreak: true }]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "LB"],
+      sets: ["7-5", "5-4"]
+    },
+
+    // Giornata 14: ML partecipa come ospite.
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["ML", "MiF"],
+      sets: ["6-3", "6-2", "3-3"]
+    },
+
+    // Giornate 15, 16 e 17: nessun incontro.
+
+    {
+      teamA: ["MaF", "LB"],
+      teamB: ["MiF", "LF"],
+      sets: ["1-6", "6-2", "6-0"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "LB"],
+      sets: ["6-3", "2-6", "6-2"]
+    },
+    {
+      teamA: ["MiF", "FP"],
+      teamB: ["MaF", "LB"],
+      sets: ["6-4", "6-2", "6-3"]
+    },
+    {
+      teamA: ["MaF", "LF"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-2", "3-6", "3-1"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["6-0", "7-5"]
+    }
+  ]
+},
 
 
 };
