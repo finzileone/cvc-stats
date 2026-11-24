@@ -2386,6 +2386,369 @@ const stagioni = {
     }
   ]
 },
+"2013-inverno": {
+  teams: ["LF", "ML", "FP", "MaF", "MiF", "PS"],
+
+  giornate: [
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, FP: 1.5 },
+    { MiF: 0.75, FP: 1.75, ML: 3.5 },
+    { MaF: 2, PS: 1, FP: 2, ML: 1 },
+    { MaF: 1, MiF: 2, PS: 1, ML: 2 },
+    { LF: 2.5, MiF: 0.5, PS: 0.5, FP: 2.5 },
+    { FP: 0.5, ML: 3.5 },
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, ML: 2.75 },
+    { LF: 1, MaF: 2, MiF: 1, FP: 2 },
+    { LF: 2.5, MaF: 0.5, FP: 2.5, ML: 0.5 },
+    { MaF: 1.5, MiF: 1.5, FP: 1.5, ML: 1.5 },
+    { MaF: 0.75, MiF: 2.25, FP: 0.75, ML: 2.25 },
+    { FP: 1, ML: 3 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, PS: 2.5 },
+    { LF: 1.5, MaF: 1.5, PS: 1.5, FP: 1.5 },
+    { LF: 0.5, MiF: 0.5, PS: 2.5, ML: 2.5 },
+    { PS: 1, FP: 2, ML: 3 },
+    { LF: 2.5, MiF: 0.5, FP: 2.5, ML: 0.5 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, PS: 2.5 },
+    { MaF: 3, MiF: 1 },
+    { LF: 2.5, PS: 0.5, FP: 2.5, ML: 0.5 },
+    { MaF: 0.75, PS: 2.25, FP: 0.75, ML: 2.25 },
+    { MaF: 1.5, MiF: 1.5, FP: 1.5, ML: 1.5 },
+    { LF: 0.5, MaF: 2.5, MiF: 0.5, PS: 2.5 },
+    { LF: 0.5, PS: 2.5, FP: 0.5, ML: 2.5 },
+    { LF: 2, MaF: 2, MiF: 1, FP: 1 },
+    { PS: 2.25, FP: 2, ML: 1.75 },
+    { LF: 0.25, MaF: 0.25, MiF: 2.75, ML: 2.75 },
+    { LF: 0.5, MaF: 2.5, MiF: 0.5, PS: 2.5 },
+    { MaF: 0.25, MiF: 2.75, PS: 0.25, ML: 2.75 }
+  ],
+
+  match: [
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["MiF", "LF"],
+      sets: ["7-5", "5-6"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-5"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-2"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-2"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["ML", "PS"],
+      sets: ["2-6", "6-2", "6-5"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "PS"],
+      sets: ["6-4", "5-5"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MiF", "PS"],
+      sets: ["6-1", "6-1"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-3", "6-4", "5-4"]
+    },
+    {
+      teamA: ["ML", "LF"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-0", "6-1", "6-3"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LF", "MiF"],
+      sets: ["7-6", "3-3"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MaF", "ML"],
+      sets: ["6-3", "6-4", "3-3"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "FP"],
+      sets: ["6-3", "5-7"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "FP"],
+      sets: ["6-3", "6-3", "1-4"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-1", "6-2"]
+    },
+    {
+      teamA: ["PS", "LF"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-3", "6-3"]
+    },
+    {
+      teamA: ["FP", "PS"],
+      teamB: ["LF", "MaF"],
+      sets: ["6-1", "4-6"]
+    },
+    {
+      teamA: ["PS", "ML"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-3", "6-3"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-1"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-2"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-1"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["MiF", "ML"],
+      sets: ["6-2", "7-5"]
+    },
+    {
+      teamA: ["LF", "PS"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-2", "7-6"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-2", "7-5"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["ML", "PS"],
+      sets: ["7-6", "6-4"]
+    },
+    {
+      teamA: ["PS", "ML"],
+      teamB: ["MaF", "FP"],
+      sets: ["6-3", "6-3", "4-5"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "FP"],
+      sets: ["3-6", "7-6"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["LF", "MiF"],
+      sets: ["6-3", "6-3"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "FP"],
+      sets: ["6-4", "6-1"]
+    },
+    {
+      teamA: ["LF", "MaF"],
+      teamB: ["FP", "MiF"],
+      sets: ["7-6", "1-1"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["6-5"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-4"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["2-3"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "LF"],
+      sets: ["6-2", "7-5", "4-3"]
+    },
+    {
+      teamA: ["MaF", "PS"],
+      teamB: ["LF", "MiF"],
+      sets: ["6-4", "6-3"]
+    },
+    {
+      teamA: ["MiF", "ML"],
+      teamB: ["MaF", "PS"],
+      sets: ["6-2", "6-1", "6-2"]
+    }
+  ]
+},
+"2013-estate": {
+  teams: ["LF", "ML", "FP", "MaF", "MiF", "PS"],
+
+  giornate: [
+    { LF: 1, PS: 2, FP: 1, ML: 2 },
+    { LF: 1, MaF: 1, MiF: 2, FP: 2 },
+    { MaF: 2.75, MiF: 0.25, PS: 0.25, ML: 2.75 },
+    { LF: 2.5, MiF: 0.5, PS: 0.5, FP: 2.5 },
+    { MaF: 2, PS: 1, FP: 1, ML: 2 },
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, ML: 1.5 },
+    { LF: 1, PS: 2, FP: 1, ML: 2 },
+    { LF: 2.5, MiF: 0.5, PS: 2.5, FP: 0.5 },
+    { MaF: 2.75, MiF: 0.25, FP: 2.75, ML: 0.25 },
+    { LF: 0.5, MaF: 0.5, PS: 2.5, ML: 2.5 },
+    { LF: 2.5, MiF: 0.5, PS: 2.5, FP: 0.5 },
+    { LF: 3.25, PS: 0.75 },
+    { MaF: 2.5, MiF: 0.5, PS: 0.5, ML: 2.5 },
+    { LF: 0.5, PS: 2.5, FP: 0.5, ML: 2.5 },
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, ML: 1.5 },
+    { MaF: 2.75, MiF: 0.25, PS: 0.25, FP: 2.75 },
+    { LF: 1, MiF: 2, FP: 1, ML: 2 },
+    { LF: 0.5, MaF: 0.5, PS: 2.5, ML: 2.5 },
+    { MaF: 2.5, MiF: 1, PS: 2.5 }
+  ],
+
+  match: [
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "FP"],
+      sets: ["6-0", "0-6", "5-1"]
+    },
+    {
+      teamA: ["FP", "MiF"],
+      teamB: ["LF", "MaF"],
+      sets: ["6-1", "2-6", "3-1"]
+    },
+    {
+      teamA: ["ML", "MaF"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-1", "6-2", "6-2"]
+    },
+    {
+      teamA: ["LF", "FP"],
+      teamB: ["PS", "MiF"],
+      sets: ["7-5", "4-3"]
+    },
+    {
+      teamA: ["ML", "MaF"],
+      teamB: ["PS", "FP"],
+      sets: ["3-6", "6-2"]
+      // Ritiro indicato nel file dopo il secondo set
+    },
+    {
+      teamA: ["ML", "MiF"],
+      teamB: ["LF", "MaF"],
+      sets: ["6-2", "2-6", "1-1"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "FP"],
+      sets: ["6-2", "3-6", "3-1"]
+    },
+    {
+      teamA: ["LF", "PS"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-4", "6-4"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["ML", "MiF"],
+      sets: ["6-2", "6-4", "3-1"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "MaF"],
+      sets: ["7-5", "3-2"]
+    },
+    {
+      teamA: ["LF", "PS"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-0", "6-4"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-1", "6-2"]
+    },
+    {
+      teamA: ["ML", "MaF"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-2", "6-2"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "FP"],
+      sets: ["6-3", "5-3"]
+    },
+    {
+      teamA: ["ML", "MiF"],
+      teamB: ["LF", "MaF"],
+      sets: ["6-0", "4-6", "3-3"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-2", "6-2", "3-1"]
+    },
+    {
+      teamA: ["ML", "MiF"],
+      teamB: ["LF", "FP"],
+      sets: ["6-4", "1-6", "4-2"]
+    },
+    {
+      teamA: ["ML", "PS"],
+      teamB: ["LF", "MaF"],
+      sets: ["7-5", "6-4"]
+    },
+    {
+      teamA: ["PS"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-3"]
+    },
+    {
+      teamA: ["PS"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["3-3"]
+    }
+  ]
+},
 
 
 
