@@ -5264,6 +5264,287 @@ const stagioni = {
     }
   ]
 },
+"2020-inverno": {
+  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB"],
+
+  giornate: [
+    { LF: 0.75, FP: 3.25 },
+    { MaF: 0.5, MiF: 2.5, PS: 0.5, FP: 2.5 },
+    { LF: 1.5, MaF: 1.5, MiF: 1.5, LB: 1.5 },
+    { MiF: 1.5, PS: 1.5, FP: 1.5, LB: 1.5 },
+    { LF: 0.5, MaF: 2.5, PS: 0.5, FP: 2.5 },
+    { LF: 1, MaF: 2, MiF: 1, LB: 2 },
+    { MiF: 2.75, PS: 0.25, FP: 0.25, LB: 2.75 },
+    { LF: 2, MaF: 2, PS: 1, LB: 1 },
+    { MaF: 2.25, MiF: 0.75, FP: 2.25, LB: 0.75 },
+    { MaF: 1.35, MiF: 1.6, LB: 1.85 },
+    { LF: 2.5, MaF: 0.5, MiF: 0.5, FP: 2.5 },
+    { LF: 2.25, MiF: 0.75, FP: 2.25, LB: 0.75 },
+    { LF: 2.5, MaF: 0.5, PS: 0.5, LB: 2.5 },
+    { MaF: 2.5, MiF: 0.5, FP: 0.5, LB: 2.5 },
+    { MaF: 1.5, PS: 1.5, FP: 1.5, LB: 1.5 },
+    { MaF: 1, MiF: 1, PS: 2, FP: 2 },
+    { MaF: 0.25, MiF: 0.25, PS: 2.75, LB: 2.75 },
+    { FP: 3, LB: 1 }
+  ],
+
+  match: [
+    {
+      teamA: ["FP"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["6-0", "6-0", "6-2"]
+    },
+    {
+      teamA: ["FP", "MiF"],
+      teamB: ["PS", "MaF"],
+      sets: ["6-2", "6-3"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["LF", "MaF"],
+      sets: ["6-4", "0-6"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["FP", "PS"],
+      sets: ["6-4", "3-6"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["PS", "LF"],
+      sets: ["6-3", "6-1"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["LF", "MiF"],
+      sets: ["4-6", "6-0", "3-2"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["FP", "PS"],
+      sets: ["6-4", "6-1", "2-0"]
+    },
+    {
+      teamA: ["LF", "MaF"],
+      teamB: ["LB", "PS"],
+      sets: ["6-4", "4-4"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["LB", "MiF"],
+      sets: ["6-1", "6-3", "0-3"]
+    },
+
+    // Giornata 10: triangolare MaF / MiF / LB.
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["5-2"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["LB"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["LB"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-0"]
+    },
+
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-4", "4-3"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MiF", "LB"],
+      sets: ["6-3", "6-2", "3-4"]
+    },
+
+    // Giornate 13 e 14 del calendario: nessun incontro.
+
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["MaF", "PS"],
+      sets: ["6-1", "6-3"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-2", "5-2"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["FP", "PS"],
+      sets: ["2-6", "5-4"]
+    },
+    {
+      teamA: ["FP", "PS"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-2", "3-6", "4-0"]
+    },
+    {
+      teamA: ["LB", "PS"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-1", "6-4", "3-2"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["LB"],
+      tipo: "singolo",
+      sets: ["7-5", "5-4"]
+    },
+
+    // Giornate 19-25: nessun risultato con punteggio registrato.
+    // Giornata 20: coppie FP-PS / MiF-MaF indicate senza risultato.
+
+    // Finale 3° posto: risultato presente, senza punti assegnati.
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-2", "6-1"]
+    },
+
+    // Finale 1° posto: risultato presente, senza punti assegnati.
+    {
+      teamA: ["LB"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["7-5", "6-4"]
+    }
+  ]
+},
+"2020-estate": {
+  teams: ["MaF", "MiF", "PS", "FP", "LB"],
+
+  giornate: [
+    { PS: 1, FP: 3 },
+    { MaF: 2.5, MiF: 0.5, FP: 0.5, LB: 2.5 },
+    { MaF: 2.5, MiF: 0.5, PS: 2.5, LB: 0.5 },
+    { MaF: 0.25, MiF: 0.25, PS: 2.75, FP: 2.75 },
+    { MaF: 2, MiF: 1, PS: 2, FP: 1 },
+    { MiF: 1, FP: 3 },
+    { MaF: 0.5, PS: 0.5, FP: 2.5, LB: 2.5 },
+    { MaF: 2.5, MiF: 0.5, PS: 0.5, LB: 2.5 },
+    { MaF: 1.35, MiF: 0.8, LB: 2.65 },
+    { MiF: 2.5, PS: 0.5, FP: 2.5, LB: 0.5 },
+    { MaF: 2.25, PS: 0.75, FP: 0.75, LB: 2.25 },
+    { MaF: 2.25, MiF: 0.75, FP: 0.75 },
+    { MaF: 0.75, MiF: 0.75, PS: 2.25, LB: 2.25 },
+    { MiF: 1, PS: 2, FP: 1, LB: 2 },
+    { MaF: 2.75, PS: 0.25, FP: 0.25, LB: 2.75 }
+  ],
+
+  match: [
+    {
+      teamA: ["FP"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["6-3", "6-0"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["FP", "MiF"],
+      sets: ["7-5", "6-3"]
+    },
+    {
+      teamA: ["PS", "MaF"],
+      teamB: ["LB", "MiF"],
+      sets: ["7-5", "5-4"]
+    },
+    {
+      teamA: ["PS", "FP"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-1", "6-4", "5-4"]
+    },
+    {
+      teamA: ["PS", "MaF"],
+      teamB: ["FP", "MiF"],
+      sets: ["7-5", "4-4"]
+    },
+    {
+      teamA: ["FP"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["6-4", "6-2"]
+    },
+    {
+      teamA: ["LB", "FP"],
+      teamB: ["PS", "MaF"],
+      sets: ["6-2", "7-5"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["PS", "MiF"],
+      sets: ["6-2", "6-1"]
+    },
+
+    // Giornata 9: triangolare MaF / MiF / LB.
+    {
+      teamA: ["MaF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["4-1"]
+    },
+    {
+      teamA: ["LB"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["4-1"]
+    },
+    {
+      teamA: ["LB"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["4-1"]
+    },
+
+    {
+      teamA: ["FP", "MiF"],
+      teamB: ["PS", "LB"],
+      sets: ["6-4", "6-4"]
+    },
+
+    // Giornate 11-13: nessun incontro.
+
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["PS", "FP"],
+      sets: ["6-3", "6-1", "1-4"]
+    },
+
+    // Giornata 15: BC partecipa come ospite.
+    {
+      teamA: ["MaF", "BC"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-4", "6-3", "0-4"]
+    },
+    {
+      teamA: ["PS", "LB"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-1", "6-1", "4-6"]
+    },
+    {
+      teamA: ["PS", "LB"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-0", "2-6", "3-2"]
+    },
+    {
+      teamA: ["LB", "MaF"],
+      teamB: ["PS", "FP"],
+      sets: ["6-1", "6-0", "5-2"]
+    }
+
+    // Giornate 19-22: nessun incontro.
+  ]
+},
 
 
 };
