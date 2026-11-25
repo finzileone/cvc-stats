@@ -6890,7 +6890,7 @@ const stagioni = {
 
     // Giornata 8
     { teamA: ["MM", "AR"], teamB: ["PS", "SS"], sets: ["6-4", "6-1"] },
-    { teamA: ["LuF", "PiS"], teamB: ["LB", "MB"], sets: ["6-4", "4-6", "7-6(5)"] },
+    { teamA: ["LuF", "PiS"], teamB: ["LB", "MB"], sets: ["6-4", "4-6", "7-6"] },
     { teamA: ["FP", "MaF"], teamB: ["MP", "MiF"], sets: ["6-3", "7-5"] },
 
     // Giornata 9
@@ -6960,7 +6960,7 @@ const stagioni = {
     // Giornata 22
     { teamA: ["FP", "ZG"], teamB: ["PS", "AR"], sets: ["6-4", "6-2"] },
     { teamA: ["ML", "BC"], teamB: ["LB", "SS"], sets: ["6-4", "6-2", "0-6"] },
-    { teamA: ["LF", "MP"], teamB: ["MM", "PiS"], sets: ["4-6", "6-3", "(7-5)"] },
+    { teamA: ["LF", "MP"], teamB: ["MM", "PiS"], sets: ["4-6", "6-3", "7-5"] },
 
     // Giornata 23
     { teamA: ["LF", "FP"], teamB: ["MiF", "LB"], sets: ["7-5", "2-3"] },
