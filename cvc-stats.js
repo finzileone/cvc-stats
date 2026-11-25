@@ -6808,7 +6808,7 @@ const stagioni = {
   ]
 },
 "2025-inverno": {
-  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "CM", "LuF", "PiS", "ZG", "MP", "MM", "MB", "SS", "AR"],
+  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB", "BC", "LuF", "PiS", "ZG", "MP", "MM", "MB", "SS", "AR"],
   giornate: [
     { LF: 1.25, MaF: 1.75, MiF: 0.25, PS: 1.25, LB: 0.25, BC: 2.75, LuF: 2.75, PiS: 2.75, ZG: 0.25, MM: 1.75, MB: 2.75, SS: 0.25 },
     { LF: 0.5, MaF: 0.75, MiF: 0.5, PS: 0.5, FP: 2.5, LB: 2.5, BC: 0.75, PiS: 2.25, ZG: 2.5, MM: 2.5, MB: 2.25, SS: 0.5 },
