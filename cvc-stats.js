@@ -7730,11 +7730,11 @@ function mostraAnteprimeGiocatori() {
       if (el) el.textContent = value;
     };
 
-    const percentualeVittorie = s.matchTotali > 0
-      ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
-      : "-";
+    const mediaPunti = s.matchTotali > 0
+  ? (s.puntiTotali / s.matchTotali).toFixed(2)
+  : "-";
 
-    setText(".player-percentuale", percentualeVittorie);
+setText(".player-media", mediaPunti);
     setText(".player-tornei", s.torneiGiocati);
   });
 }
