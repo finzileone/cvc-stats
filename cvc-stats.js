@@ -7164,7 +7164,120 @@ const stagioni = {
     { teamA: ["MP"], teamB: ["MiF"], tipo: "singolo", sets: ["5-0"] },
     { teamA: ["BC"], teamB: ["LF"], tipo: "singolo", sets: ["5-0"] }
   ]
-}
+},
+"1-singolo": {
+  teams: ["LF", "MiF", "ML", "PS", "MaF", "FP"],
+  giornate: [
+    { LF: 2, MiF: 0 },
+    { LF: 1, ML: 1 },
+    { LF: 1.5, PS: 0.5 },
+    { LF: 1.5, MaF: 0.5 },
+    { LF: 1, FP: 1 },
+    { MiF: 0, ML: 2 },
+    { MiF: 2, PS: 0 },
+    { MiF: 1, MaF: 1 },
+    { MiF: 0, FP: 2 },
+    { ML: 2, PS: 0 },
+    { ML: 2, MaF: 0 },
+    { ML: 1, FP: 1 },
+    { PS: 2, MaF: 0 },
+    { PS: 1.5, FP: 0.5 },
+    { MaF: 0, FP: 2 }
+  ],
+  match: [
+    {
+      teamA: ["LF"],
+      teamB: ["MiF"],
+      tipo: "singolo",
+      sets: ["4-1", "4-0"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["ML"],
+      tipo: "singolo",
+      sets: ["2-4", "4-1"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["4-2", "2-2"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["4-2", "2-2"]
+    },
+    {
+      teamA: ["LF"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["4-3", "2-3"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["ML"],
+      tipo: "singolo",
+      sets: ["0-4", "1-4"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["4-0", "4-1"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["4-3", "0-4"]
+    },
+    {
+      teamA: ["MiF"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["2-4", "1-4"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["PS"],
+      tipo: "singolo",
+      sets: ["4-1", "4-1"]
+    },
+    {
+      teamA: ["ML"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["4-0", "4-2"]
+    },
+    {
+      // Ritiro: giocatore ritirato non specificato.
+      teamA: ["ML"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["4-2"]
+    },
+    {
+      teamA: ["PS"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["4-3", "2-1"]
+    },
+    {
+      teamA: ["PS"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["4-3", "0-0"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["FP"],
+      tipo: "singolo",
+      sets: ["1-4", "1-4"]
+    }
+  ]
+},
 
 
 
