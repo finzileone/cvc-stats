@@ -5545,6 +5545,172 @@ const stagioni = {
     // Giornate 19-22: nessun incontro.
   ]
 },
+"2021-all": {
+  teams: ["LF", "MaF", "MiF", "PS", "FP", "LB", "BC"],
+  giornate: [
+    { MaF: 2.25, MiF: 0.75, FP: 0.75, BC: 2.25 },
+    { MiF: 2, PS: 1, LB: 2, BC: 1 },
+    { MaF: 2.75, PS: 0.25, FP: 2.75, LB: 0.25 },
+    { MaF: 0.25, MiF: 0.25, FP: 2.75, BC: 2.75 },
+    { MiF: 0.75, PS: 2.25, LB: 0.75, BC: 2.25 },
+    { MaF: 0.75, MiF: 0.75, FP: 2.25, LB: 2.25 },
+    { MaF: 0.75, LB: 3.25 },
+    { MaF: 0.5, MiF: 2.5, FP: 2.5, BC: 0.5 },
+    { LF: 1, FP: 1, LB: 2, BC: 2 },
+    { LF: 0.25, MiF: 2.75, LB: 2.75, BC: 0.25 },
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, FP: 2.75 },
+    { MaF: 1.5, FP: 1.5, LB: 1.5, BC: 1.5 },
+    { LF: 2.75, MiF: 0.25, LB: 2.75, BC: 0.25 },
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, FP: 2.75 },
+    { MaF: 0.75, FP: 0.75, LB: 2.25, BC: 2.25 },
+    { LF: 2.25, MiF: 0.75, LB: 2.25, BC: 0.75 },
+    { LF: 0.25, MaF: 2.75, MiF: 0.25, FP: 2.75 },
+    { MaF: 1.5, FP: 1.5, LB: 1.5, BC: 1.5 },
+    { LF: 0.8, MaF: 1.6, BC: 2.4 },
+    { LF: 1.5, MiF: 1.5, FP: 1.5, LB: 1.5 },
+    { MaF: 0.5, MiF: 2.5, LB: 2.5, BC: 0.5 },
+    { LF: 2.75, MaF: 0.25, MiF: 0.25, FP: 2.75 },
+    { MaF: 2, FP: 2, LB: 1, BC: 1 },
+    { LF: 0.25, MiF: 2.75, LB: 2.75, BC: 0.25 }
+  ],
+  match: [
+    {
+      teamA: ["MaF", "BC"],
+      teamB: ["MiF", "FP"],
+      sets: ["6-2", "6-2", "1-6"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["PS", "BC"],
+      sets: ["2-6", "6-4", "5-3"]
+    },
+    {
+      teamA: ["MaF", "FP"],
+      teamB: ["LB", "PS"],
+      sets: ["6-3", "6-1", "6-1"]
+    },
+    {
+      teamA: ["FP", "BC"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-1", "6-2", "6-1"]
+    },
+    {
+      teamA: ["PS", "BC"],
+      teamB: ["LB", "MiF"],
+      sets: ["6-3", "6-2", "1-6"]
+    },
+    {
+      teamA: ["FP", "LB"],
+      teamB: ["MiF", "MaF"],
+      sets: ["6-4", "6-0", "3-5"]
+    },
+    {
+      teamA: ["LB"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["6-0", "5-2"]
+    },
+    {
+      teamA: ["FP", "MiF"],
+      teamB: ["MaF", "BC"],
+      sets: ["6-4", "6-4"]
+    },
+    {
+      teamA: ["LB", "BC"],
+      teamB: ["FP", "LF"],
+      sets: ["6-4", "3-6", "3-0"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["BC", "LF"],
+      sets: ["6-2", "6-2", {score: "10-5", tiebreak: true}]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MaF", "MiF"],
+      sets: ["7-5", "6-0", "4-2"]
+    },
+    {
+      teamA: ["LB", "BC"],
+      teamB: ["FP", "MaF"],
+      sets: ["7-6", "0-6"]
+    },
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["BC", "MiF"],
+      sets: ["6-0", "6-4", "6-1"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-3", "6-2", "5-2"]
+    },
+    {
+      teamA: ["LB", "BC"],
+      teamB: ["FP", "MaF"],
+      sets: ["6-2", "6-2", "2-6"]
+    },
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["BC", "MiF"],
+      sets: ["6-3", "6-3", {score: "4-10", tiebreak: true}]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["MiF", "LF"],
+      sets: ["6-1", "6-1", "6-1"]
+    },
+    {
+      teamA: ["LB", "BC"],
+      teamB: ["FP", "MaF"],
+      sets: ["7-5", "3-5"]
+    },
+    // G19 - Triangolare di singoli
+    {
+      teamA: ["BC"],
+      teamB: ["MaF"],
+      tipo: "singolo",
+      sets: ["5-0"]
+    },
+    {
+      teamA: ["BC"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["MaF"],
+      teamB: ["LF"],
+      tipo: "singolo",
+      sets: ["5-1"]
+    },
+    {
+      teamA: ["LB", "LF"],
+      teamB: ["FP", "MiF"],
+      sets: ["6-7", "1-0"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["BC", "MaF"],
+      sets: ["6-1", "6-3", "3-3"]
+    },
+    {
+      teamA: ["FP", "LF"],
+      teamB: ["MaF", "MiF"],
+      sets: ["6-3", "6-1", "3-1"]
+    },
+    {
+      teamA: ["FP", "MaF"],
+      teamB: ["LB", "BC"],
+      sets: ["3-6", "6-2", "4-2"]
+    },
+    {
+      teamA: ["LB", "MiF"],
+      teamB: ["BC", "LF"],
+      sets: ["6-1", "6-3", "6-1"]
+    }
+  ]
+},
 "2022-inverno": {
   teams: ["LF", "MaF", "MiF", "FP", "LB", "BC"],
 
