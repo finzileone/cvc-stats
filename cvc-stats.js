@@ -7443,34 +7443,34 @@ function avviaAnimazioneClassifica(stagioneKey) {
   });
 }
 const datiGiocatori = {
-  "MiF": { tennista: "Michele Fornari", trofei: 2, oro: 0, argento: 0, bronzo: 2, matchVinti: 12, matchPersi: 35, matchPari: 3, singoliVinti: 1, singoliPersi: 14 },
-  "LT": { tennista: "Luca Travaglio", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "FP": { tennista: "Filippo Pedroli", trofei: 23, oro: 8, argento: 9, bronzo: 6, matchVinti: 20, matchPersi: 21, matchPari: 3, singoliVinti: 8, singoliPersi: 5 },
-  "LF": { tennista: "Luca Finzi", trofei: 21, oro: 7, argento: 7, bronzo: 7, matchVinti: 26, matchPersi: 15, matchPari: 4, singoliVinti: 15, singoliPersi: 9 },
-  "MaF": { tennista: "Mario Fornari", trofei: 8, oro: 0, argento: 3, bronzo: 5, matchVinti: 22, matchPersi: 25, matchPari: 2, singoliVinti: 2, singoliPersi: 10 },
-  "LB": { tennista: "Luca Belitrandi", trofei: 15, oro: 9, argento: 3, bronzo: 3 },
-  "ML": { tennista: "Marco Levi", trofei: 14, oro: 7, argento: 6, bronzo: 1, matchVinti: 29, matchPersi: 13, matchPari: 3, singoliVinti: 14, singoliPersi: 2 },
-  "PS": { tennista: "Paolo Semenza", trofei: 8, oro: 0, argento: 1, bronzo: 7, matchVinti: 15, matchPersi: 14, matchPari: 5, singoliVinti: 4, singoliPersi: 4 },
-  "BC": { tennista: "Beppe Colli", trofei: 4, oro: 0, argento: 1, bronzo: 3 },
-  "LuF": { tennista: "Luca Fornari", trofei: 7, oro: 4, argento: 3, bronzo: 0 },
-  "MP": { tennista: "Martino Prati", trofei: 1, oro: 0, argento: 1, bronzo: 0 },
-  "ZG": { tennista: "Zeno Gorini", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "PiS": { tennista: "Pietro Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "MM": { tennista: "Mario Marangione", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "CM": { tennista: "Carlo Momigliano", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "MeF": { tennista: "Matteo Fornari", trofei: 2, oro: 1, argento: 1, bronzo: 0 },
-  "MB": { tennista: "Massimo Bergia", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "MS": { tennista: "Mattia Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MiF": { tennista: "Michele Fornari", annoNascita: 1953, trofei: 2, oro: 0, argento: 0, bronzo: 2, matchVinti: 12, matchPersi: 35, matchPari: 3, singoliVinti: 1, singoliPersi: 14 },
+  "LT": { tennista: "Luca Travaglio", annoNascita: 1947, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "FP": { tennista: "Filippo Pedroli", annoNascita: 1960, trofei: 23, oro: 8, argento: 9, bronzo: 6, matchVinti: 20, matchPersi: 21, matchPari: 3, singoliVinti: 8, singoliPersi: 5 },
+  "LF": { tennista: "Luca Finzi", annoNascita: 1953, trofei: 21, oro: 7, argento: 7, bronzo: 7, matchVinti: 26, matchPersi: 15, matchPari: 4, singoliVinti: 15, singoliPersi: 9 },
+  "MaF": { tennista: "Mario Fornari", annoNascita: 1962, trofei: 8, oro: 0, argento: 3, bronzo: 5, matchVinti: 22, matchPersi: 25, matchPari: 2, singoliVinti: 2, singoliPersi: 10 },
+  "LB": { tennista: "Luca Belitrandi", annoNascita: 1967, trofei: 15, oro: 9, argento: 3, bronzo: 3 },
+  "ML": { tennista: "Marco Levi", annoNascita: 1953, trofei: 14, oro: 7, argento: 6, bronzo: 1, matchVinti: 29, matchPersi: 13, matchPari: 3, singoliVinti: 14, singoliPersi: 2 },
+  "PS": { tennista: "Paolo Semenza", annoNascita: 1953, trofei: 8, oro: 0, argento: 1, bronzo: 7, matchVinti: 15, matchPersi: 14, matchPari: 5, singoliVinti: 4, singoliPersi: 4 },
+  "BC": { tennista: "Beppe Colli", annoNascita: 1961, trofei: 4, oro: 0, argento: 1, bronzo: 3 },
+  "LuF": { tennista: "Luca Fornari", annoNascita: 1993, trofei: 7, oro: 4, argento: 3, bronzo: 0 },
+  "MP": { tennista: "Martino Prati", annoNascita: 1994, trofei: 1, oro: 0, argento: 1, bronzo: 0 },
+  "ZG": { tennista: "Zeno Gorini", annoNascita: 1994, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "PiS": { tennista: "Pietro Semenza", annoNascita: 1996, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MM": { tennista: "Mario Marangione", annoNascita: 1959, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "CM": { tennista: "Carlo Momigliano", annoNascita: 1953, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MeF": { tennista: "Matteo Fornari", annoNascita: 1995, trofei: 2, oro: 1, argento: 1, bronzo: 0 },
+  "MB": { tennista: "Massimo Bergia", annoNascita: 1959, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "MS": { tennista: "Mattia Semenza", annoNascita: 1989, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
   "GF": { tennista: "Giovanni Fornari", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
   "AR": { tennista: "Agustin Rojas", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "SS": { tennista: "Stefano Semenza", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "AB": { tennista: "Alessandro Belitrandi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "LeF": { tennista: "Leone Finzi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "AoB": { tennista: "Antonio Bergamasco", trofei: 1, oro: 0, argento: 0, bronzo: 1 },
-  "PF": { tennista: "Pier Silvio Forziano", trofei: 1, oro: 1, argento: 0, bronzo: 0 },
-  "MaB": { tennista: "Massimo Bergamasco", trofei: 1, oro: 0, argento: 0, bronzo: 1 },
-  "RB": { tennista: "Ruggero Bottazzi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
-  "FG": { tennista: "Filippo Groppi", trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "SS": { tennista: "Stefano Semenza", annoNascita: 1992, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "AB": { tennista: "Alessandro Belitrandi", annoNascita: 2006, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "LeF": { tennista: "Leone Finzi", annoNascita: 1994, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "AoB": { tennista: "Antonio Bergamasco", annoNascita: 1957, trofei: 1, oro: 0, argento: 0, bronzo: 1 },
+  "PF": { tennista: "Pier Silvio Forziano", annoNascita: 1997, trofei: 1, oro: 1, argento: 0, bronzo: 0 },
+  "MaB": { tennista: "Massimo Bergamasco", annoNascita: 2001, trofei: 1, oro: 0, argento: 0, bronzo: 1 },
+  "RB": { tennista: "Ruggero Bottazzi", annoNascita: 1960, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
+  "FG": { tennista: "Filippo Groppi", annoNascita: 1994, trofei: 0, oro: 0, argento: 0, bronzo: 0 },
 
   // Aggiungi tutti gli altri...
 };
@@ -7797,33 +7797,77 @@ function mostraStatisticheAllTime() {
         ? (s.puntiTotali / s.matchTotali).toFixed(2)
         : "0.00";
 
+     function mostraStatisticheAllTime() {
+  const stats = calcolaStatisticheGlobali();
+  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
+  if (!wrapper) return;
+
+  const container = document.createElement("div");
+  wrapper.appendChild(container);
+
+  const scrollWrapper = document.createElement("div");
+  scrollWrapper.className = "stats-table-wrapper";
+  container.appendChild(scrollWrapper);
+
+  const table = document.createElement("table");
+  table.className = "stats-table";
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Sigla</th>
+        <th>Tennista</th>
+        <th>Anno di nascita</th>
+        <th>Tornei</th>
+        <th>Trofei</th>
+        <th>Oro</th>
+        <th>Argento</th>
+        <th>Bronzo</th>
+        <th>Match</th>
+        <th>Vinte</th>
+        <th>Pari</th>
+        <th>Perse</th>
+        <th>Punti Totali</th>
+        <th>Media Punti</th>
+        <th>% Vittorie</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+  scrollWrapper.appendChild(table);
+
+  const body = table.querySelector("tbody");
+  Object.entries(stats)
+    .sort(([, a], [, b]) => b.torneiGiocati - a.torneiGiocati)
+    .forEach(([giocatore, s]) => {
+      const info = datiGiocatori[giocatore] || {};
+      const percentualeVittorie = s.matchTotali > 0
+        ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
+        : "-";
+
+      const mediaPunti = s.matchTotali > 0
+        ? (s.puntiTotali / s.matchTotali).toFixed(2)
+        : "0.00";
+
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${giocatore}</td>
         <td>${info.tennista || "-"}</td>
+        <td>${info.annoNascita ?? "-"}</td>
+        <td>${s.torneiGiocati}</td>
         <td>${info.trofei ?? "-"}</td>
         <td>${info.oro ?? "-"}</td>
         <td>${info.argento ?? "-"}</td>
         <td>${info.bronzo ?? "-"}</td>
-        <td>${s.torneiGiocati}</td>
         <td>${s.matchTotali}</td>
         <td>${s.matchVinti}</td>
-        <td>${s.matchPersi}</td>
         <td>${s.matchPari}</td>
-        <td>${s.singoliVinti}</td>
-        <td>${s.singoliPersi}</td>
-        <td>${percentualeVittorie}</td>
-        <td>${s.setVinti}</td>
-        <td>${s.setPersi}</td>
-        <td>${s.gameVinti}</td>
-        <td>${s.gamePersi}</td>
+        <td>${s.matchPersi}</td>
         <td>${s.puntiTotali.toFixed(2)}</td>
         <td>${mediaPunti}</td>
+        <td>${percentualeVittorie}</td>
       `;
       body.appendChild(row);
     });
-
-  container.appendChild(table);
 }
 
 // === AVVIO AUTOMATICO ===
