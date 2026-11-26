@@ -7797,7 +7797,7 @@ function mostraStatisticheAllTime() {
         ? (s.puntiTotali / s.matchTotali).toFixed(2)
         : "0.00";
 
-     function mostraStatisticheAllTime() {
+    function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
   const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
   if (!wrapper) return;
