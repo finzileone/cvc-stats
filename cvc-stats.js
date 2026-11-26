@@ -7739,64 +7739,6 @@ setText(".player-media", mediaPunti);
   });
 }
 
-
-
-function mostraStatisticheAllTime() {
-  const stats = calcolaStatisticheGlobali();
-  const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
-  if (!wrapper) return;
-
-  const container = document.createElement("div");
-  wrapper.appendChild(container);
-
-  const scrollWrapper = document.createElement("div");
-  scrollWrapper.className = "stats-table-wrapper";
-  container.appendChild(scrollWrapper);
-
-  const table = document.createElement("table");
-  table.className = "stats-table";
-  table.innerHTML = `
-    <thead>
-      <tr>
-        <th>Sigla</th>
-        <th>Tennista</th>
-        <th>Trofei</th>
-        <th>Oro</th>
-        <th>Argento</th>
-        <th>Bronzo</th>
-        <th>Tornei</th>
-        <th>Match</th>
-        <th>Vinte</th>
-        <th>Perse</th>
-        <th>Pari</th>
-        <th>Singoli V</th>
-        <th>Singoli P</th>
-        <th>% Vittorie</th>
-        <th>Set Vinti</th>
-        <th>Set Persi</th>
-        <th>Game Vinti</th>
-        <th>Game Persi</th>
-        <th>Punti Totali</th>
-        <th>Media Punti</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  `;
-  scrollWrapper.appendChild(table);
-
-  const body = table.querySelector("tbody");
-  Object.entries(stats)
-    .sort(([, a], [, b]) => b.puntiTotali - a.puntiTotali)
-    .forEach(([giocatore, s]) => {
-      const info = datiGiocatori[giocatore] || {};
-      const percentualeVittorie = s.matchTotali > 0
-        ? (s.matchVinti / s.matchTotali * 100).toFixed(1) + "%"
-        : "-";
-
-      const mediaPunti = s.matchTotali > 0
-        ? (s.puntiTotali / s.matchTotali).toFixed(2)
-        : "0.00";
-
     function mostraStatisticheAllTime() {
   const stats = calcolaStatisticheGlobali();
   const wrapper = document.querySelector(`.statistiche-wrapper[data-stagione="all-time"]`);
