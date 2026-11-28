@@ -7583,16 +7583,15 @@ if (!stats[p]) {
 const setsB = setStats[keyB];
 
 if (ritiro === "A" || ritiro === "B") {
-  // Se il match era già deciso dopo i primi due set, il ritiro non cambia il vincitore
-  if (setsA > setsB) {
+  if (setsA >= 2) {
     winner = teamA;
-  } else if (setsB > setsA) {
+  } else if (setsB >= 2) {
     winner = teamB;
   } else {
-    // Match non ancora deciso: il ritiro dà la vittoria all'altra squadra
     winner = ritiro === "A" ? teamB : teamA;
   }
-} else {
+}
+else {
   if (setsA > setsB) {
     winner = teamA;
   } else if (setsB > setsA) {
