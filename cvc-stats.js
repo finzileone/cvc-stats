@@ -10,7 +10,7 @@ const stagioni = {
       { LF: 0.75, MaF: 1.5, MiF: 2.75, PS: 2.25, BC: 0.25, ZG: 1.5, MP: 1.5, LeF: 2.75, LT: 0.25, PiS: 1.5, MB: 0.75, MaB: 2.75, AoB: 2.25, AB: 2.75, FG: 0.25, RB: 0.25 },
       { MaF: 1.25, MiF: 2, PS: 2.25, FP: 0.5, LB: 1.75, LuF: 2.5, MP: 1.25, LeF: 0.5, PiS: 2.5, MaB: 0.75, AoB: 2, AB: 0.75, MeF: 1, FG: 1.75, RB: 1, PF: 2.25 },
       { LF: 2.75, MiF: 2, PS: 0.25, LB: 0.25, BC: 0.25, LuF: 2.75, ZG: 0.25, MP: 1, LT: 2.75, PiS: 2, MaB: 2.75, AB: 0.25, MeF: 2.75, FG: 0.25, RB: 1, PF: 2.75 },
-      { LF: 2.25, MaF: 2.75, MiF: 2.5, FP: 0.5, LB: 2.5, BC: 0.5, ZG: 2.5, MP: 0.25, LeF: 0.5, MM: 0.75, MaB: 0.75, AoB: 2.25, AB: 0.25, MeF: 2.75, PF: 2.5 }
+      { LF: 2.25, MaF: 2.75, MiF: 2.5, FP: 0.5, LB: 2.5, BC: 0.5, ZG: 2.5, MP: 0.25, LeF: 0.5, MM: 0.75, MaB: 0.75, AoB: 2.25, AB: 0.25, MeF: 2.75, PF: 2.5, PiS: 0.5 }
     ],
     match: [
       {
